@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your models here.
 class AbstractModel(models.Model):
@@ -18,6 +21,7 @@ class Setting(AbstractModel):
     instagram = models.CharField(max_length=100)
     twitter = models.CharField(max_length=100)
     pinterest = models.CharField(max_length=100)
+    paymentitem = models.ImageField(upload_to='media/payment')
 
     def __str__(self):
         return "My Site Settings"
@@ -103,3 +107,6 @@ class Contact(AbstractModel):
 
     def __str__(self):
         return self.name_and_surname
+
+
+
