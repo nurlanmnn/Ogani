@@ -16,22 +16,32 @@ admin.site.register(AboutOurShop)
 admin.site.register(SecureShopping)
 admin.site.register(PrivacyPolicy)
 admin.site.register(WhoWeAre)
-admin.site.register(Contact)
+
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('name_and_surname', 'email')
+    list_display = ('name_and_surname', 'email_address')
     list_filter = ('is_check',)
-    search_fields = ('text',)
-    readonly_fields = ('email','text')
-
+    search_fields = ('name_and_surname',)
+    # readonly_fields = ('email','text')
 
     fieldsets = (
-        ('Personal info', {
-            'fields': ('name', 'email'),
-            'classes': ('collapse'),
-        }),
-        ('Additional info', {
-            'fields': ('text', 'is_check')
-        }),
-    )
+            ('Personal info', {
+                'fields': ('name_and_surname', 'email_address'),
+                'classes': ('collapse'),
+            }),
+            ('Additional info', {
+                'fields': ('text', 'is_check')
+            }),
+        )
+
+
+
+
+
+
+
+
+
+
+

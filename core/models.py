@@ -104,6 +104,7 @@ class Contact(AbstractModel):
     name_and_surname = models.CharField(max_length=100)
     email_address = models.EmailField()
     text = models.TextField()
+    is_check= models.BooleanField(default=False)
 
     def __str__(self):
         return self.name_and_surname
