@@ -1,13 +1,15 @@
 from django.shortcuts import render
-from .models import Setting
+from .models import Advertisement, Setting, Contact
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'index.html')
 
 def contact(request):
-    return render(request, 'contact.html')
+    contact = Contact.objects.first()
+    context = {
+        'contact': contact
+    }
+    return render(request, 'contact.html', context)
 
 def index(request):
     setting = Setting.objects.first()
@@ -16,3 +18,9 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
+def home(request):
+    advars = Advertisement.objects.all()
+    context = {
+        'advars': advars
+    }
+    return render(request, 'index.html', context)

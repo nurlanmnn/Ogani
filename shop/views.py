@@ -1,6 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
-
 def shop(request):
-    return render(request, 'shop-grid.html')
+    shop = shop.objects.all()
+    context = {
+        'shop': shop
+    }
+    return render(request, 'shop-details.html', context)

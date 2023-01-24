@@ -1,7 +1,8 @@
-# from core import views
-# from django.urls import path
+from .views import home, contact
+from django.urls import path
+# import views
 
-# urlpatterns = [
-#     path('', views.home, name='index'),
-#     path('contact/', views.contact, name='contact')
-# ]
+urlpatterns = [
+    path('', home, name='home'),
+    path('contact', contact, name='contact'),
+]
