@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from core.forms import SubscriberForm
 from .models import Advertisement, Setting, Contact
 
 # Create your views here.
@@ -13,14 +15,16 @@ def contact(request):
 
 def index(request):
     setting = Setting.objects.first()
+    subscribe_form = SubscriberForm()
     context = {
-        'settings': setting
+        'settings': setting,
+        'subscribe_form': subscribe_form,
     }
     return render(request, 'index.html', context)
 
 def home(request):
     advars = Advertisement.objects.all()
     context = {
-        'advars': advars
+        'advars': advars,
     }
     return render(request, 'index.html', context)
