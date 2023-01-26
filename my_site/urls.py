@@ -23,19 +23,24 @@ Including another URLconf
 # from shop import views
 
 
-
 from core.views import *
 from django.contrib import admin
 from django.urls import path
 from core import views
+from blog import views
+from blog.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from core.urls import urlpatterns as core_urls
+from blog.urls import urlpatterns as blog_urls
+# from shop.urls import urlpatterns as shop_urls
+
 from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('', include(core_urls)),
+    path('', include(blog_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 

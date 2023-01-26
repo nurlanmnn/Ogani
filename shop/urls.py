@@ -1,7 +1,6 @@
+# from .views import shop
 from django.urls import path
-import views
 
-
-urlpatterns = [
-    path('shop/', views.shop, name='shop-details'),
-]
+# urlpatterns = [
+#     path('shop', shop, name='shop'),
+# ]
