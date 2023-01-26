@@ -16,6 +16,12 @@ def contact(request):
 def index(request):
     setting = Setting.objects.first()
     subscribe_form = SubscriberForm()
+    if request.method == 'POST':
+        subscribe_form = SubscriberForm(request.POST)
+        if subscribe_form.is_valid():
+            subscribe_form.save()
+            subscribe_form = SubscriberForm()
+
     context = {
         'settings': setting,
         'subscribe_form': subscribe_form,
