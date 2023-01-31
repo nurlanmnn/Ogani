@@ -26,15 +26,17 @@ Including another URLconf
 from core.views import *
 from django.contrib import admin
 from django.urls import path
-from core import views
-from blog import views
+# from core import views
+# from blog import views
 from blog.views import *
 from shop.views import *
+from baseuser.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from core.urls import urlpatterns as core_urls
 from blog.urls import urlpatterns as blog_urls
 from shop.urls import urlpatterns as shop_urls
+from baseuser.urls import urlpatterns as base_urls
 
 from django.conf.urls import include
 
@@ -44,5 +46,6 @@ urlpatterns = [
     path('', include(core_urls)),
     path('', include(blog_urls)),
     path('', include(shop_urls)),
+    path('', include(base_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 

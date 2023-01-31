@@ -25,12 +25,16 @@
                             <div>English</div>
                             <span class="arrow_carrot-down"></span>
                             <ul>
-                                <li><a href="#">Spanis</a></li>
+                                <li><a href="#">Spanish</a></li>
                                 <li><a href="#">English</a></li>
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i> Login</a>
+                            <a href="{% url 'login' %}"><i class="fa fa-user"></i> login </a>
+                            <a href="{% url 'register' %}"><i class="fa fa-user"></i> Register </a>
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'logout' %}"><i class="fa fa-user"></i> Logout </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

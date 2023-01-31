@@ -5,3 +5,4 @@ from .views import shop
 urlpatterns = [
     path('shop', shop, name='shop'),
 ]
+
