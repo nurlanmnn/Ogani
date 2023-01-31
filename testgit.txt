@@ -1,0 +1,9 @@
+githuba push etmek
+1 git status(elementler qirmizi rengde gorsenecek)
+2 git add .
+3 git status(elementler yasil rengde olacak)
+4 git commit -m 'akif'
+5 git push ve ya git push origin akif
+
+
+
