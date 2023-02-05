@@ -42,10 +42,11 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
     path('', include(core_urls)),
     path('', include(blog_urls)),
     path('', include(shop_urls)),
     path('', include(base_urls)),
+    path('', include('social_django.urls', namespace='social')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+
 

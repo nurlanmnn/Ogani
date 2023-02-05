@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'baseuser',
     'blog',
     'shop',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processor.context_processors.header',
             ],
         },
     },
@@ -147,3 +149,20 @@ STATICFILES_DIRS = [
 ]
 
 AUTH_USER_MODEL = 'baseuser.MyUser'
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '297889705642-cv7cj1m2rbt8ouame17t3nq2euscr5v6.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+
+LOGIN_URL = '/auth/login/google-oauth2/'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'

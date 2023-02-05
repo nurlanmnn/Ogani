@@ -1,15 +1,22 @@
 from django.shortcuts import render
 
-from core.forms import SubscriberForm
-from .models import Advertisement, Setting, Contact
+from core.forms import SubscriberForm, ContactForm
+from .models import Setting, Contact
 
 # Create your views here.
 
 
 def contact(request):
     contact = Contact.objects.first()
+    contact_form = ContactForm()
+    if request.method == 'POST':
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+            contact_form = ContactForm()
     context = {
-        'contact': contact
+        'contact': contact,
+        'contact_form': contact_form
     }
     return render(request, 'contact.html', context)
 
@@ -28,9 +35,28 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-def home(request):
-    advars = Advertisement.objects.all()
+# def contact_form(request):
+#     contact_form = ContactForm()
+#     if request.method == 'POST':
+#         contact_form = ContactForm(request.POST)
+#         if contact_form.is_valid():
+#             contact_form.save()
+#             contact_form = ContactForm()
+    
+#     context = {
+#         'contact_form': contact_form,
+#     }
+#     return render(request, 'contact.html', context)
+
+def checkout(request):
     context = {
-        'advars': advars,
+        'checkout': checkout
     }
-    return render(request, 'index.html', context)
+    return render(request, 'checkout.html', context)
+
+def aboutus(request):
+    context = {
+        'aboutus': aboutus
+    }
+    return render(request, 'aboutus.html', context)
+

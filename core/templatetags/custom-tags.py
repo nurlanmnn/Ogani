@@ -14,5 +14,5 @@ def get_FeaturedProduct_all(limit,offset):
     return FeaturedProduct.objects.all()[limit:offset]
 
 @register.simple_tag
-def get_LatestProduct_all():
-    return LatestProduct.objects.all()
+def get_LatestProduct_all(limit,offset):
+    return LatestProduct.objects.all()[limit:offset]
