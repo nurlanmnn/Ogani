@@ -11,10 +11,13 @@ class AbstractModel(models.Model):
     class Meta:
         abstract = True
 
-class Shop(AbstractModel):
+class Product(AbstractModel):
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=100)
+    category = models.CharField(max_length=100)
+    description = models.TextField()
     image = models.ImageField(upload_to='media/shopp')
     price = models.CharField(max_length=100)
+    discount = models.CharField(max_length=100)
+
 
 

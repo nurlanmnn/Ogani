@@ -21,3 +21,16 @@ class Blog(AbstractModel):
 
     def __str__(self):
         return self.title
+
+class News(AbstractModel):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    image = models.ImageField(upload_to='media/news')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name_plural = ("News")
+    
