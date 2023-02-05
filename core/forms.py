@@ -9,13 +9,6 @@ class SubscriberForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'placeholder': 'Enter your mail'}),
         }
 
-    # def clean(self):
-    #     cleaned_data = super().clean()
-    #     email = cleaned_data.get('email')
-    #     if email:
-    #         if Subscriber.objects.filter(email=email).exists():
-    #             raise forms.ValidationError('Email already exists')
-    #         return cleaned_data
     
     def clean_email(self):
         email = self.cleaned_data.get('email')

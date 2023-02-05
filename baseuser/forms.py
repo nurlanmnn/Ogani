@@ -21,6 +21,11 @@ class RegisterForm(forms.ModelForm):
             'password2': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password2'}),
         }
 
+    def __init__(self, *args, **kwargs):
+        super(RegisterForm, self).__init__(*args, **kwargs)
+        self.fields['password'].widget = forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'})
+        self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm Password'})
+
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:

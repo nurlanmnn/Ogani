@@ -35,18 +35,7 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-# def contact_form(request):
-#     contact_form = ContactForm()
-#     if request.method == 'POST':
-#         contact_form = ContactForm(request.POST)
-#         if contact_form.is_valid():
-#             contact_form.save()
-#             contact_form = ContactForm()
-    
-#     context = {
-#         'contact_form': contact_form,
-#     }
-#     return render(request, 'contact.html', context)
+
 
 def checkout(request):
     context = {

@@ -16,11 +16,10 @@ def blog(request):
     }
     return render(request, 'blog.html', context)
 
-def blog_details(request):
-    news = News.objects.first()
+def blog_details(request, id):
+    blog = Blog.objects.get(id=id)
     context = {
-        'blog_details': blog_details,
-        'news': news,
+        'blog': blog,
     }
     return render(request, 'blog-details.html', context)
 
