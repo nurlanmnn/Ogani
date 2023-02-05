@@ -70,7 +70,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'core.context_processor.context_processors.header',
-                # 'tools.custom_context_processor.subscribe_view',
+                'core.context_processor.context_processors.subscribe_form',
             ],
         },
     },

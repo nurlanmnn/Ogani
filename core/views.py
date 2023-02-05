@@ -1,5 +1,4 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from core.forms import SubscriberForm, ContactForm
 from .models import Setting, Contact
 
@@ -22,19 +21,22 @@ def contact(request):
 
 def index(request):
     setting = Setting.objects.first()
-    subscribe_form = SubscriberForm()
-    if request.method == 'POST':
-        subscribe_form = SubscriberForm(request.POST)
-        if subscribe_form.is_valid():
-            subscribe_form.save()
-            subscribe_form = SubscriberForm()
-
     context = {
         'settings': setting,
-        'subscribe_form': subscribe_form,
     }
     return render(request, 'index.html', context)
 
+def subscribe(request):
+    if request.method == 'POST':
+        form = SubscriberForm(request.POST)
+        if form.is_valid():
+            # save the form data to database
+            form.save()
+            # redirect the user to a success page
+            return redirect('index')
+    else:
+        form = SubscriberForm()
+    return render(request, '_footer.html', {'subscribe_form': form})
 
 
 def checkout(request):
