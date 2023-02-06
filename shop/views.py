@@ -1,13 +1,26 @@
 from django.shortcuts import render
 from .models import Product
+from django.views.generic import ListView
+
 # # Create your views here.
 
-def shop(request):
-    shop = Product.objects.first()
-    context = {
-        'shop': shop
-    }
-    return render(request, 'shop-grid.html', context)
+# def shop(request):
+#     product = Product.objects.first()
+#     context = {
+#         'product': product,
+#     }
+#     return render(request, 'shop-grid.html', context)
+
+
+class ProductListView(ListView):
+    model = Product
+    template_name = 'shop-grid.html'
+    context_object_name = 'product'
+    paginate_by = 2
+
+    def get_queryset(self):
+        return self.model.objects.all().order_by('-created_at')
+
 
 def shop_details(request):
     context = {

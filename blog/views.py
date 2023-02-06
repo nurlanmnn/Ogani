@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from .models import Blog, News
 from django.views.generic import ListView
-from django.core.paginator import Paginator
+# from django.core.paginator import Paginator
 
 
 # Create your views here.
