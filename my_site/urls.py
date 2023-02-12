@@ -26,8 +26,10 @@ Including another URLconf
 from core.views import *
 from django.contrib import admin
 from django.urls import path
-# from core import views
-# from blog import views
+# translation
+from django.utils.translation import gettext_lazy as _
+from django.conf.urls.i18n import i18n_patterns
+# translation
 from blog.views import *
 from shop.views import *
 from baseuser.views import *
@@ -38,15 +40,31 @@ from blog.urls import urlpatterns as blog_urls
 from shop.urls import urlpatterns as shop_urls
 from baseuser.urls import urlpatterns as base_urls
 
+# from core.views import set_language
 from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(core_urls)),
-    path('', include(blog_urls)),
-    path('', include(shop_urls)),
+    path('blog', include(blog_urls)),
+    path('shop', include(shop_urls)),
     path('', include(base_urls)),
+    path('rosetta/', include('rosetta.urls')),
     path('', include('social_django.urls', namespace='social')),
+    path('/', set_language, name='set_language'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
+# translation
+urlpatterns += i18n_patterns(
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('', include(core_urls)),
+    path('', include(base_urls)),
+    path('blog', include(blog_urls)),
+    path('shop', include(shop_urls)),
+)
 
+# urlpatterns += [
+#     *i18n_patterns(*urlpatterns, prefix_default_language=True),
+#    # YENİ
+#     path("set_language/<str:language>", set_language, name="set-language"),
+# ]

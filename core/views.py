@@ -1,6 +1,9 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect
 from core.forms import SubscriberForm, ContactForm
-from .models import Setting, Contact
+from .models import AboutUs, Setting, Contact
+from django.utils import translation
+# from django.config import settings
+from urllib.parse import urlparse
 
 # Create your views here.
 
@@ -46,8 +49,32 @@ def checkout(request):
     return render(request, 'checkout.html', context)
 
 def aboutus(request):
+    aboutus = AboutUs.objects.first()
     context = {
         'aboutus': aboutus
     }
     return render(request, 'aboutus.html', context)
+
+from django.utils import translation
+from django.shortcuts import redirect
+from django.conf import settings
+
+def set_language(request):
+    language = request.POST.get('language', settings.LANGUAGE_CODE)
+    translation.activate(language)
+    request.session[translation.LANGUAGE_SESSION_KEY] = language
+    return redirect('root')
+
+
+# def set_language(request, language='en'):
+#     for lang, _ in settings.LANGUAGES:
+#         translation.activate(lang)
+#     next_url = request.META.get("HTTP_REFERER")
+#     if next_url:
+#         translation.activate(language)
+#         response = HttpResponseRedirect(next_url)
+#         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+#     else:
+#         response = HttpResponseRedirect("/")
+#     return response
 

@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-09 16:31+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: my_site/settings.py:134
+msgid "English"
+msgstr ""
+
+#: my_site/settings.py:135
+msgid "Azerbaijani"
+msgstr ""
+
+#: templates/_navbar.html:12
+msgid "Free Shipping for all Order of $99"
+msgstr ""
+
+#: templates/_navbar.html:39
+msgid "Log Out"
+msgstr ""
+
+#: templates/_navbar.html:42
+msgid "Login"
+msgstr ""
+
+#: templates/_navbar.html:45
+msgid "Register"
+msgstr ""
+
+#: templates/_navbar.html:64
+msgid "Home"
+msgstr ""
+
+#: templates/_navbar.html:65
+msgid "Shop"
+msgstr ""
+
+#: templates/_navbar.html:66
+msgid "Pages"
+msgstr ""
+
+#: templates/_navbar.html:68
+msgid "Shop Details"
+msgstr ""
+
+#: templates/_navbar.html:69
+msgid "Shoping Cart"
+msgstr ""
+
+#: templates/_navbar.html:70
+msgid "Check Out"
+msgstr ""
+
+#: templates/_navbar.html:71
+msgid "Blog Details"
+msgstr ""
+
+#: templates/_navbar.html:74
+msgid "Blog"
+msgstr ""
+
+#: templates/_navbar.html:75
+msgid "Contact"
+msgstr ""
+
+#: templates/_navbar.html:85
+msgid "item"
+msgstr ""
