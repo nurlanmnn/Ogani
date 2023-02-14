@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 16:31+0400\n"
+"POT-Creation-Date: 2023-02-14 17:24+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,66 +17,273 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: my_site/settings.py:134
+
+#: core/forms.py:11
+msgid "Enter your mail"
+msgstr ""
+
+#: core/forms.py:18
+msgid "Invalid email address"
+msgstr ""
+
+#: core/forms.py:20
+msgid "Email already exists"
+msgstr ""
+
+#: core/forms.py:29
+msgid "Your name and surname"
+msgstr ""
+
+#: core/forms.py:30
+msgid "Your email"
+msgstr ""
+
+#: core/forms.py:31
+msgid "Your message"
+msgstr ""
+
+#: core/templates/index.html:38
+msgid "All departments"
+msgstr ""
+
+#: core/templates/index.html:41 core/templates/index.html:142
+msgid "Fresh Meat"
+msgstr ""
+
+#: core/templates/index.html:42 core/templates/index.html:111
+#: core/templates/index.html:143
+msgid "Vegetables"
+msgstr ""
+
+#: core/templates/index.html:43
+msgid "Fruit & Nut Gifts"
+msgstr ""
+
+#: core/templates/index.html:44
+msgid "Fresh Berries"
+msgstr ""
+
+#: core/templates/index.html:45
+msgid "Ocean Foods"
+msgstr ""
+
+#: core/templates/index.html:46
+msgid "Butter & Eggs"
+msgstr ""
+
+#: core/templates/index.html:47 core/templates/index.html:144
+msgid "Fastfood"
+msgstr ""
+
+#: core/templates/index.html:48
+msgid "Fresh Onion"
+msgstr ""
+
+#: core/templates/index.html:49
+msgid "Papayaya & Crisps"
+msgstr ""
+
+#: core/templates/index.html:50
+msgid "Oatmeal"
+msgstr ""
+
+#: core/templates/index.html:51
+msgid "Fresh Bananas"
+msgstr ""
+
+#: core/templates/index.html:60
+msgid "All Categories"
+msgstr ""
+
+#: core/templates/index.html:64
+msgid "SEARCH"
+msgstr ""
+
+#: core/templates/index.html:75
+msgid "support 24/7 time"
+msgstr ""
+
+#: core/templates/index.html:81
+msgid "FRUIT FRESH"
+msgstr ""
+
+#: core/templates/index.html:82
+msgid "Vegetable"
+msgstr ""
+
+#: core/templates/index.html:82
+#, python-format
+msgid "100%% Organic"
+msgstr ""
+
+#: core/templates/index.html:83
+msgid "Free Pickup and Delivery Available"
+msgstr ""
+
+#: core/templates/index.html:84
+msgid "SHOP NOW"
+msgstr ""
+
+#: core/templates/index.html:106
+msgid "Dried Fruit"
+msgstr ""
+
+#: core/templates/index.html:116 core/templates/index.html:121
+msgid "drink fruits"
+msgstr ""
+
+#: core/templates/index.html:136
+msgid "Featured Product"
+msgstr ""
+
+#: core/templates/index.html:140
+msgid "All"
+msgstr ""
+
+#: core/templates/index.html:141
+msgid "Oranges"
+msgstr ""
+
+#: core/templates/index.html:201
+msgid "Latest Products"
+msgstr ""
+
+#: core/templates/index.html:239
+msgid "Top Rated Products"
+msgstr ""
+
+#: core/templates/index.html:278
+msgid "Review Products"
+msgstr ""
+
+#: core/templates/index.html:325
+msgid "From The Blog"
+msgstr ""
+
+#: my_site/settings.py:139
 msgid "English"
 msgstr ""
 
-#: my_site/settings.py:135
+#: my_site/settings.py:140
 msgid "Azerbaijani"
+msgstr ""
+
+#: templates/_footer.html:21
+msgid "About Ogani"
+msgstr ""
+
+#: templates/_footer.html:23
+msgid "About Us"
+msgstr ""
+
+#: templates/_footer.html:24
+msgid "About Our Shop"
+msgstr ""
+
+#: templates/_footer.html:25
+msgid "Secure Shopping"
+msgstr ""
+
+#: templates/_footer.html:26
+msgid "Delivery infomation"
+msgstr ""
+
+#: templates/_footer.html:27
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/_footer.html:28
+msgid "Our Sitemap"
+msgstr ""
+
+#: templates/_footer.html:31
+msgid "Who We Are"
+msgstr ""
+
+#: templates/_footer.html:32
+msgid "Our Services"
+msgstr ""
+
+#: templates/_footer.html:33
+msgid "Projects"
+msgstr ""
+
+#: templates/_footer.html:34 templates/_navbar.html:107
+msgid "Contact"
+msgstr ""
+
+#: templates/_footer.html:35
+msgid "Innovation"
+msgstr ""
+
+#: templates/_footer.html:36
+msgid "Testimonials"
+msgstr ""
+
+#: templates/_footer.html:43
+msgid "Join Our Newsletter Now"
+msgstr ""
+
+#: templates/_footer.html:44
+msgid "Get E-mail updates about our latest shop and special offers."
+msgstr ""
+
+#: templates/_footer.html:53
+msgid "Subscribe"
+msgstr ""
+
+#: templates/_footer.html:68
+msgid "All rights reserved"
 msgstr ""
 
 #: templates/_navbar.html:12
 msgid "Free Shipping for all Order of $99"
 msgstr ""
 
-#: templates/_navbar.html:39
+#: templates/_navbar.html:71
 msgid "Log Out"
 msgstr ""
 
-#: templates/_navbar.html:42
+#: templates/_navbar.html:74
 msgid "Login"
 msgstr ""
 
-#: templates/_navbar.html:45
+#: templates/_navbar.html:77
 msgid "Register"
 msgstr ""
 
-#: templates/_navbar.html:64
+#: templates/_navbar.html:96
 msgid "Home"
 msgstr ""
 
-#: templates/_navbar.html:65
+#: templates/_navbar.html:97
 msgid "Shop"
 msgstr ""
 
-#: templates/_navbar.html:66
+#: templates/_navbar.html:98
 msgid "Pages"
 msgstr ""
 
-#: templates/_navbar.html:68
+#: templates/_navbar.html:100
 msgid "Shop Details"
 msgstr ""
 
-#: templates/_navbar.html:69
+#: templates/_navbar.html:101
 msgid "Shoping Cart"
 msgstr ""
 
-#: templates/_navbar.html:70
+#: templates/_navbar.html:102
 msgid "Check Out"
 msgstr ""
 
-#: templates/_navbar.html:71
+#: templates/_navbar.html:103
 msgid "Blog Details"
 msgstr ""
 
-#: templates/_navbar.html:74
+#: templates/_navbar.html:106
 msgid "Blog"
 msgstr ""
 
-#: templates/_navbar.html:75
-msgid "Contact"
-msgstr ""
-
-#: templates/_navbar.html:85
+#: templates/_navbar.html:117
 msgid "item"
 msgstr ""

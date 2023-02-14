@@ -13,9 +13,10 @@ class ProductListView(ListView):
     def get_queryset(self):
         return self.model.objects.all().order_by('-created_at')
 
-def shop_details(request):
+def shop_details(request, slug):
+    product = Product.objects.get(slug=slug)
     context = {
-        'shop_details': shop_details
+        'product': product
     }
     return render(request, 'shop-details.html', context)
 

@@ -5,6 +5,7 @@ from .models import Blog, News
 class BlogTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
 
+
 class NewsTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
 

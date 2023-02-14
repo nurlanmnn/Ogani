@@ -192,8 +192,8 @@
                                         </div>
                                         <div class="product__discount__item__text">
                                             <span>{{ i.category }}</span>
-                                            <h5><a href="#">{{i.title }}</a></h5>
-                                            <div class="product__item__price">${{ i.discounted_price }}<span>${{ i.price }}</span></div>
+                                            <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
+                                            <div class="product__item__price">$ {{ i.discounted_price }}<span>${{ i.price }}</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -240,8 +240,8 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">{{ i.title }}</a></h6>
-                                    <h5>{{ i.price }}</h5>
+                                    <h6><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h6>
+                                    <h5>$ {{ i.price }}</h5>
                                 </div>
                             </div>
                         </div>

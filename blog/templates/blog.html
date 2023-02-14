@@ -88,9 +88,9 @@
                                 <div class="blog__item__text">
                                     <ul>
                                         <li><i class="fa fa-calendar-o"></i> {{ i.created_at|date:"j F Y" }} </li>
-                                        <li><i class="fa fa-comment-o"></i> 5</li>
+                                        <li><i class="fas fa-comment"></i> 5</li>
                                     </ul>
-                                    <h5><a href="#">{{ i.title }}</a></h5>
+                                    <h5><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h5>
                                     <p>{{ i.description|truncatechars:90 }} </p>
                                     <a href="{{ i.get_absolute_url }}" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
                                 </div>

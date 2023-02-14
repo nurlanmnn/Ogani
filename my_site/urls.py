@@ -22,26 +22,28 @@ Including another URLconf
 # from django.conf.urls.static import static
 # from shop import views
 
-
-from core.views import *
 from django.contrib import admin
 from django.urls import path
 # translation
 from django.utils.translation import gettext_lazy as _
 from django.conf.urls.i18n import i18n_patterns
 # translation
+from django.conf import settings
+from django.conf.urls.static import static
+from django.conf.urls import include
+
+from core.views import *
 from blog.views import *
 from shop.views import *
 from baseuser.views import *
-from django.conf import settings
-from django.conf.urls.static import static
+
 from core.urls import urlpatterns as core_urls
 from blog.urls import urlpatterns as blog_urls
 from shop.urls import urlpatterns as shop_urls
 from baseuser.urls import urlpatterns as base_urls
+from blog.api.urls import urlpatterns as blog_api_urls
 
-# from core.views import set_language
-from django.conf.urls import include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -52,6 +54,7 @@ urlpatterns = [
     path('rosetta/', include('rosetta.urls')),
     path('', include('social_django.urls', namespace='social')),
     path('/', set_language, name='set_language'),
+    path('api/', include(blog_api_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
 # translation

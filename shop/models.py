@@ -1,5 +1,8 @@
 from django.db import models
 from decimal import Decimal
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your models here.
 
@@ -20,6 +23,7 @@ class Product(AbstractModel):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     discount_percentage = models.FloatField(default=0.0)
     discounted_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)
+    slug = models.SlugField(max_length=100)
 
     def save(self, *args, **kwargs):
         discount = Decimal(str(self.discount_percentage / 100))
@@ -28,6 +32,10 @@ class Product(AbstractModel):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('shopdetails', kwargs={'slug': self.slug})
 
 
 

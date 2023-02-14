@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 16:29+0400\n"
-"PO-Revision-Date: 2023-02-11 14:07+0400\n"
+"POT-Creation-Date: 2023-02-14 17:24+0400\n"
+"PO-Revision-Date: 2023-02-14 20:01+0400\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,66 +19,275 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: my_site/settings.py:134
-msgid "English"
-msgstr ""
+#: core/forms.py:11
+msgid "Enter your mail"
+msgstr "Emailinizi daxil edin"
 
-#: my_site/settings.py:135
+#: core/forms.py:18
+msgid "Invalid email address"
+msgstr "E-mail ünvanı səhvdir"
+
+#: core/forms.py:20
+msgid "Email already exists"
+msgstr "Elektron poçt ünvanı artıq mövcuddur"
+
+#: core/forms.py:29
+msgid "Your name and surname"
+msgstr "Adınız və soyadınız"
+
+#: core/forms.py:30
+msgid "Your email"
+msgstr "Emailiniz"
+
+#: core/forms.py:31
+msgid "Your message"
+msgstr "İsmarıcınız"
+
+#: core/templates/index.html:38
+msgid "All departments"
+msgstr "Bütün bölmələr"
+
+#: core/templates/index.html:41 core/templates/index.html:142
+msgid "Fresh Meat"
+msgstr "Təzə Ət"
+
+#: core/templates/index.html:42 core/templates/index.html:111
+#: core/templates/index.html:143
+msgid "Vegetables"
+msgstr "Tərəvəz"
+
+#: core/templates/index.html:43
+msgid "Fruit & Nut Gifts"
+msgstr "Meyvə & Çərəz"
+
+#: core/templates/index.html:44
+msgid "Fresh Berries"
+msgstr "Yeni Giləmeyvələr"
+
+#: core/templates/index.html:45
+msgid "Ocean Foods"
+msgstr "Dəniz məhsulları"
+
+#: core/templates/index.html:46
+msgid "Butter & Eggs"
+msgstr "Yağ & Yumurta"
+
+#: core/templates/index.html:47 core/templates/index.html:144
+msgid "Fastfood"
+msgstr "Fastfood"
+
+#: core/templates/index.html:48
+msgid "Fresh Onion"
+msgstr "Yeni Soğan"
+
+#: core/templates/index.html:49
+msgid "Papayaya & Crisps"
+msgstr "Papayaya & Krisplər"
+
+#: core/templates/index.html:50
+msgid "Oatmeal"
+msgstr "Yulaf"
+
+#: core/templates/index.html:51
+msgid "Fresh Bananas"
+msgstr "Bananlar"
+
+#: core/templates/index.html:60
+msgid "All Categories"
+msgstr "Bütün Kateqoriyalar"
+
+#: core/templates/index.html:64
+msgid "SEARCH"
+msgstr "AXTAR"
+
+#: core/templates/index.html:75
+msgid "support 24/7 time"
+msgstr "24/7 dəstək"
+
+#: core/templates/index.html:81
+msgid "FRUIT FRESH"
+msgstr "YENİ MEYVƏ"
+
+#: core/templates/index.html:82
+msgid "Vegetable"
+msgstr "Tərəvəz"
+
+#: core/templates/index.html:82
+#, python-format
+msgid "100%% Organic"
+msgstr "100% Yeni"
+
+#: core/templates/index.html:83
+msgid "Free Pickup and Delivery Available"
+msgstr "Pulsuz Çatdırılma"
+
+#: core/templates/index.html:84
+msgid "SHOP NOW"
+msgstr "İNDİ ALIŞ-VERİŞ EDİN"
+
+#: core/templates/index.html:106
+msgid "Dried Fruit"
+msgstr "Quru Meyvə"
+
+#: core/templates/index.html:116 core/templates/index.html:121
+msgid "drink fruits"
+msgstr "Gilə"
+
+#: core/templates/index.html:136
+msgid "Featured Product"
+msgstr "Önəçıxan Məhsullar"
+
+#: core/templates/index.html:140
+msgid "All"
+msgstr "Hamısı"
+
+#: core/templates/index.html:141
+msgid "Oranges"
+msgstr "Portağal"
+
+#: core/templates/index.html:201
+msgid "Latest Products"
+msgstr "Ən Son Məhsullar"
+
+#: core/templates/index.html:239
+msgid "Top Rated Products"
+msgstr "Ən Çox Satılanlar"
+
+#: core/templates/index.html:278
+msgid "Review Products"
+msgstr "Qerib Məhsullar"
+
+#: core/templates/index.html:325
+msgid "From The Blog"
+msgstr "Bloglardan"
+
+#: my_site/settings.py:139
+msgid "English"
+msgstr "Ingilis"
+
+#: my_site/settings.py:140
 msgid "Azerbaijani"
+msgstr "Azərbaycan"
+
+#: templates/_footer.html:21
+msgid "About Ogani"
+msgstr "Ogani Haqqında"
+
+#: templates/_footer.html:23
+msgid "About Us"
+msgstr "Haqqımızda"
+
+#: templates/_footer.html:24
+msgid "About Our Shop"
+msgstr "Mağazamız haqqında"
+
+#: templates/_footer.html:25
+msgid "Secure Shopping"
+msgstr "Təhlükəsiz Alış-veriş"
+
+#: templates/_footer.html:26
+msgid "Delivery infomation"
+msgstr "Çatdırılma Məlumatı"
+
+#: templates/_footer.html:27
+msgid "Privacy Policy"
+msgstr "Gizlilik Siyasəti"
+
+#: templates/_footer.html:28
+msgid "Our Sitemap"
+msgstr "Sayt Xəritəmiz"
+
+#: templates/_footer.html:31
+msgid "Who We Are"
+msgstr "Biz Kimik"
+
+#: templates/_footer.html:32
+msgid "Our Services"
+msgstr "Xidmətlərimiz"
+
+#: templates/_footer.html:33
+msgid "Projects"
+msgstr "Layihələr"
+
+#: templates/_footer.html:34 templates/_navbar.html:107
+msgid "Contact"
+msgstr "Əlaqə"
+
+#: templates/_footer.html:35
+msgid "Innovation"
+msgstr "Yenilik"
+
+#: templates/_footer.html:36
+msgid "Testimonials"
+msgstr "Testimonial"
+
+#: templates/_footer.html:43
+msgid "Join Our Newsletter Now"
 msgstr ""
+"Yeniliklərdən və kampaniyalarımızdan xəbərdar olmaq istəyirsinizsə abunə "
+"olun"
+
+#: templates/_footer.html:44
+msgid "Get E-mail updates about our latest shop and special offers."
+msgstr ""
+"Ən son mağazamız və xüsusi təkliflərimiz haqqında e-poçt yeniləmələri alın."
+
+#: templates/_footer.html:53
+msgid "Subscribe"
+msgstr "Abunə olun"
+
+#: templates/_footer.html:68
+msgid "All rights reserved"
+msgstr "Bütün hüquqlar qorunur"
 
 #: templates/_navbar.html:12
 msgid "Free Shipping for all Order of $99"
 msgstr "Pulsuz çatdırılma"
 
-#: templates/_navbar.html:39
+#: templates/_navbar.html:71
 msgid "Log Out"
 msgstr "Çıxış"
 
-#: templates/_navbar.html:42
+#: templates/_navbar.html:74
 msgid "Login"
+msgstr "Daxil olun"
+
+#: templates/_navbar.html:77
+msgid "Register"
 msgstr "Qeydiyyat"
 
-#: templates/_navbar.html:45
-msgid "Register"
-msgstr ""
-
-#: templates/_navbar.html:64
+#: templates/_navbar.html:96
 msgid "Home"
-msgstr ""
+msgstr "Əsas"
 
-#: templates/_navbar.html:65
+#: templates/_navbar.html:97
 msgid "Shop"
 msgstr "Məhsul"
 
-#: templates/_navbar.html:66
+#: templates/_navbar.html:98
 msgid "Pages"
-msgstr ""
+msgstr "Səhifələr"
 
-#: templates/_navbar.html:68
+#: templates/_navbar.html:100
 msgid "Shop Details"
-msgstr ""
+msgstr "Alış-Veriş Məlumatları"
 
-#: templates/_navbar.html:69
+#: templates/_navbar.html:101
 msgid "Shoping Cart"
 msgstr "Alış-Veriş kartı"
 
-#: templates/_navbar.html:70
+#: templates/_navbar.html:102
 msgid "Check Out"
 msgstr "Yoxlanış"
 
-#: templates/_navbar.html:71
+#: templates/_navbar.html:103
 msgid "Blog Details"
 msgstr "Bloq detalları"
 
-#: templates/_navbar.html:74
+#: templates/_navbar.html:106
 msgid "Blog"
 msgstr "Bloq"
 
-#: templates/_navbar.html:75
-msgid "Contact"
-msgstr "Əlaqə"
-
-#: templates/_navbar.html:85
+#: templates/_navbar.html:117
 msgid "item"
 msgstr "əşya"
