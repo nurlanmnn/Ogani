@@ -1,8 +1,7 @@
-
 {% extends 'base.html' %}
 {% load static custom-tags %}
 {% load static custom_tags %}
-
+{% load i18n %}
 {% block content %}
 
 
@@ -28,68 +27,69 @@
 
 <!-- Card Section End -->
 
-
-
 <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>All departments</span>
+<section class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="hero__categories">
+                    <div class="hero__categories__all">
+                        <i class="fa fa-bars"></i>
+                        <span>{% trans 'All departments' %}</span>
+                    </div>
+                    <ul>
+                        <li><a href="#">{% trans 'Fresh Meat' %}</a></li>
+                        <li><a href="#">{% trans 'Vegetables' %}</a></li>
+                        <li><a href="#">{% trans 'Fruit & Nut Gifts' %}</a></li>
+                        <li><a href="#">{% trans 'Fresh Berries' %}</a></li>
+                        <li><a href="#">{% trans 'Ocean Foods' %}</a></li>
+                        <li><a href="#">{% trans 'Butter & Eggs' %}</a></li>
+                        <li><a href="#">{% trans 'Fastfood' %}</a></li>
+                        <li><a href="#">{% trans 'Fresh Onion' %}</a></li>
+                        <li><a href="#">{% trans 'Papayaya & Crisps' %}</a></li>
+                        <li><a href="#">{% trans 'Oatmeal' %}</a></li>
+                        <li><a href="#">{% trans 'Fresh Bananas' %}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="hero__search">
+                    <div class="hero__search__form">
+                        <form action="#">
+                            <div class="hero__search__categories">
+                                {% trans 'All Categories' %}
+                                <span class="arrow_carrot-down"></span>
+                            </div>
+                            <input type="text" placeholder="What do you need?">
+                            <button type="submit" class="site-btn">{% trans 'SEARCH' %}</button>
+                        </form>
+                    </div>
+                    <div class="hero__search__phone">
+                        <div class="hero__search__phone__icon">
+                            <a href="tel:+994516221288">
+                            <i class="fa fa-phone"></i>
+                            </a>
                         </div>
-                        <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
-                        </ul>
+                        <div class="hero__search__phone__text">
+                            <h5>{{ settings.phone }}</h5>
+                            <span>{% trans 'support 24/7 time' %}</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>{{ settings.phone }}</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero__item set-bg" data-setbg="{% static 'img/hero/banner.jpg' %}">
-                        <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="{% url 'shop' %}" class="primary-btn">SHOP NOW</a>
-                        </div>
+                <div class="hero__item set-bg" data-setbg="{% static 'img/hero/banner.jpg' %}">
+                    <div class="hero__text">
+                        <span>{% trans 'FRUIT FRESH' %}</span>
+                        <h2>{% trans 'Vegetable' %} <br />{% trans '100% Organic' %}</h2>
+                        <p>{% trans 'Free Pickup and Delivery Available' %}</p>
+                        <a href="{% url 'shop' %}" class="primary-btn">{% trans 'SHOP NOW' %}</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Hero Section End -->
+    </div>
+</section>
+<!-- Hero Section End -->
+
 
     <!-- Categories Section Begin -->
     <section class="categories">
@@ -103,22 +103,22 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-2.jpg' %}">
-                            <h5><a href="#">Dried Fruit</a></h5>
+                            <h5><a href="#">{% trans 'Dried Fruit' %}</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-3.jpg' %}">
-                            <h5><a href="#">Vegetables</a></h5>
+                            <h5><a href="#">{% trans 'Vegetables' %}</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-4.jpg' %}">
-                            <h5><a href="#">drink fruits</a></h5>
+                            <h5><a href="#">{% trans 'drink fruits' %}</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-5.jpg' %}">
-                            <h5><a href="#">drink fruits</a></h5>
+                            <h5><a href="#">{% trans 'drink fruits' %}</a></h5>
                         </div>
                     </div>
                 </div>
@@ -133,15 +133,15 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Featured Product</h2>
+                        <h2>{% trans 'Featured Product' %}</h2>
                     </div>
                     <div class="featured__controls">
                         <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Oranges</li>
-                            <li data-filter=".fresh-meat">Fresh Meat</li>
-                            <li data-filter=".vegetables">Vegetables</li>
-                            <li data-filter=".fastfood">Fastfood</li>
+                            <li class="active" data-filter="*">{% trans 'All' %}</li>
+                            <li data-filter=".oranges">{% trans 'Oranges' %}</li>
+                            <li data-filter=".fresh-meat">{% trans 'Fresh Meat' %}</li>
+                            <li data-filter=".vegetables">{% trans 'Vegetables' %}</li>
+                            <li data-filter=".fastfood">{% trans 'Fastfood' %}</li>
                         </ul>
                     </div>
                 </div>
@@ -198,7 +198,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Latest Products</h4>
+                        <h4>{% trans 'Latest Products' %}</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 {% get_LatestProduct_all 0 3 as lproduct %}
@@ -221,7 +221,7 @@
                                 {% for i in lproduct %}
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="{{ i.image }}" alt="">
+                                        <img src="{{ i.image.url }}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
@@ -236,7 +236,7 @@
                             
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Top Rated Products</h4>
+                        <h4>{% trans 'Top Rated Products' %}</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 {% get_LatestProduct_all 0 3 as lproduct %}
@@ -259,7 +259,7 @@
                                 {% for i in lproduct %}
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="{{ i.image }}" alt="">
+                                        <img src="{{ i.image.url }}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
@@ -275,14 +275,14 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Review Products</h4>
+                        <h4>{% trans 'Review Products' %}</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 {% get_LatestProduct_all 0 3 as lproduct %}
                                 {% for i in lproduct %}
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="{{ i.image }}" alt="">
+                                        <img src="{{ i.image.url }}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
@@ -291,13 +291,14 @@
                                 </a>
                                 {% endfor %}
                                 
+
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 {% get_LatestProduct_all 3 6 as lproduct %}
                                 {% for i in lproduct %}
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="{{ i.image }}" alt="">
+                                        <img src="{{ i.image.url }}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
@@ -305,7 +306,6 @@
                                     </div>
                                 </a>
                                 {% endfor %}
-                                
                             </div>
                         </div>
                     </div>
@@ -322,7 +322,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title from-blog__title">
-                        <h2>From The Blog</h2>
+                        <h2>{% trans 'From The Blog' %}</h2>
                     </div>
                 </div>
             </div>
@@ -332,14 +332,14 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="{{ i.image }}" alt="">
+                            <img src="{{ i.image.url }}" alt="">
                         </div>
                         <div class="blog__item__text">
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> {{ i.created_at|date:"j F Y" }}</li>
                                 <li><i class="fa fa-comment-o"></i> 5</li>
                             </ul>
-                            <h5><a href="#">{{ i.title }}</a></h5>
+                            <h5><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h5>
                             <p>{{ i.description|truncatechars:90 }}</p>
                         </div>
                     </div>

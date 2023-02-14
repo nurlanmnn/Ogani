@@ -8,10 +8,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center ">
                     <div class="breadcrumb__text">
-                        <h2>Contact Us</h2>
+                        <h2>{% trans 'Contact Us' %}</h2>
                         <div class="breadcrumb__option">
-                            <a href="{% url 'index' %}">Home</a>
-                            <span>Contact Us</span>
+                            <a href="{% url 'index' %}">{% trans 'Home' %}</a>
+                            <span>{% trans 'Contact Us' %}</span>
                         </div>
                     </div>
                 </div>
@@ -27,28 +27,28 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_phone"></span>
-                        <h4>Phone</h4>
+                        <h4><a href="https://wa.me/+994516221288">{% trans 'Phone' %}</a></h4>
                         <p>{{ settings.phone }}</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_pin_alt"></span>
-                        <h4>Address</h4>
+                        <h4>{% trans 'Address' %}</h4>
                         <p>{{ settings.address }}</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_clock_alt"></span>
-                        <h4>Open time</h4>
+                        <h4>{% trans 'Open time' %}</h4>
                         <p>10:00 am to 23:00 pm</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="icon_mail_alt"></span>
-                        <h4>Email</h4>
+                        <h4><a href="mailto:mmmdlinurlan40@gmail.com?subject=Mail from our Website">Email</a></h4>
                         <p>{{ settings.email }}</p>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact__form__title">
-                        <h2>Leave Message</h2>
+                        <h2>% 'Leave Message' %</h2>
                     </div>
                 </div>
             </div>

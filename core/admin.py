@@ -1,19 +1,16 @@
 from django.contrib import admin
 
 from .models import (
-    Advertisement, FeaturedProduct, LatestProduct, Student, Subscriber, Setting, AboutUs, 
-    AboutOurShop, SecureShopping, PrivacyPolicy, 
-    WhoWeAre, Contact, Image
+    Advertisement, FeaturedProduct, LatestProduct, Subscriber, Setting, AboutUs, 
+    SecureShopping, PrivacyPolicy, 
+    Contact, Image
     )
 
 # Register your models here.
-
-admin.site.register(Student)
 admin.site.register(Subscriber)
-admin.site.register(AboutOurShop)
+
 admin.site.register(SecureShopping)
 admin.site.register(PrivacyPolicy)
-admin.site.register(WhoWeAre)
 admin.site.register(Image)
 admin.site.register(Advertisement)
 admin.site.register(FeaturedProduct)
@@ -47,8 +44,8 @@ class SettingsAdmin(admin.ModelAdmin):
     # def has_add_permission(self, request, obj=None):
     #     return False
     
-    def has_delete_permission(self, request, obj=None):
-        return False
+    # def has_delete_permission(self, request, obj=None):
+    #     return False
 
 
 class ImageInline(admin.TabularInline):

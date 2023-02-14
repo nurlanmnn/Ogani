@@ -8,18 +8,18 @@ from django.views.generic import ListView
 # Create your views here.
 
 def blog(request):
-    blog = Blog.objects.first()
+    # blog = Blog.objects.first()
     news = News.objects.first()
     context = {
-        'blog': blog,
+        # 'blog': blog,
         'news': news,
     }
     return render(request, 'blog.html', context)
 
-def blog_details(request, id):
-    blog = Blog.objects.get(id=id)
+def blog_details(request, slug):
+    blog = Blog.objects.get(slug=slug)
     context = {
-        'blog': blog,
+        'post': blog,
     }
     return render(request, 'blog-details.html', context)
 
