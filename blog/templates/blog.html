@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static custom_tags %}
+{% load i18n %}
 {% block content %}
 
 
@@ -11,10 +12,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Blog</h2>
+                        <h2>{% trans 'Blog' %}</h2>
                         <div class="breadcrumb__option">
-                            <a href="{% url 'index' %}">Home</a>
-                            <span>Blog</span>
+                            <a href="{% url 'index' %}">{% trans 'Home' %}</a>
+                            <span>{% trans 'Blog' %}</span>
                         </div>
                     </div>
                 </div>
@@ -36,17 +37,17 @@
                             </form>
                         </div>
                         <div class="blog__sidebar__item">
-                            <h4>Categories</h4>
+                            <h4>{% trans 'Categories' %}</h4>
                             <ul>
-                                <li><a href="#">All</a></li>
-                                <li><a href="#">Beauty (20)</a></li>
-                                <li><a href="#">Food (5)</a></li>
-                                <li><a href="#">Life Style (9)</a></li>
-                                <li><a href="#">Travel (10)</a></li>
+                                <li><a href="#">{% trans 'All' %}</a></li>
+                                <li><a href="#">{% trans 'Beauty (20)' %}</a></li>
+                                <li><a href="#">{% trans 'Food (5)' %}</a></li>
+                                <li><a href="#">{% trans 'Life Style (9)' %}</a></li>
+                                <li><a href="#">{% trans 'Travel (10)' %}</a></li>
                             </ul>
                         </div>
                         <div class="blog__sidebar__item">
-                            <h4>Recent News</h4>
+                            <h4>{% trans 'Recent News' %}</h4>
                             <div class="blog__sidebar__recent">
                                 {% get_News_all 0 3 as news %}
                                 {% for i in news %}
@@ -64,26 +65,26 @@
                             </div>
                         </div>
                         <div class="blog__sidebar__item">
-                            <h4>Search By</h4>
+                            <h4>{% trans 'Search By' %}</h4>
                             <div class="blog__sidebar__item__tags">
-                                <a href="#">Apple</a>
-                                <a href="#">Beauty</a>
-                                <a href="#">Vegetables</a>
-                                <a href="#">Fruit</a>
-                                <a href="#">Healthy Food</a>
-                                <a href="#">Lifestyle</a>
+                                <a href="#">{% trans 'Apple' %}</a>
+                                <a href="#">{% trans 'Beauty' %}</a>
+                                <a href="#">{% trans 'Vegetables' %}</a>
+                                <a href="#">{% trans 'Fruit' %}</a>
+                                <a href="#">{% trans 'Healthy Food' %}</a>
+                                <a href="#">{% trans 'Lifestyle' %}</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-7">
+                <div class="col-lg-8 col-md-7" id="blog">
                     <div class="row">
                         
                         {% for i in blog %}
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="blog__item">
                                 <div class="blog__item__pic">
-                                    <img src="{{ i.image.url }}" alt="">
+                                    <img src="{{ i.image.url }}" width="220" height="280" alt="">
                                 </div>
                                 <div class="blog__item__text">
                                     <ul>
@@ -92,11 +93,41 @@
                                     </ul>
                                     <h5><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h5>
                                     <p>{{ i.description|truncatechars:90 }} </p>
-                                    <a href="{{ i.get_absolute_url }}" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                                    <a href="{{ i.get_absolute_url }}" class="blog__btn">{% trans 'READ MORE' %} <span class="arrow_right"></span></a>
                                 </div>
                             </div>
                         </div>
                         {% endfor %}
+                        
+
+                        <!-- <script>
+                            let blog = document.getElementById('blog')
+                            fetch('/api/blogs/')
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data)
+                            for(let i in data) {
+                                blog.innerHTML += `
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="blog__item">
+                                        <div class="blog__item__pic">
+                                    <img src="${data[i].image}" width="220" height="280" alt="">
+                                        </div>
+                                        <div class="blog__item__text">
+                                            <ul>
+                                                <li><i class="fa fa-calendar-o"></i> ${data[i].created_at}</li>
+                                                <li><i class="fas fa-comment"></i> 5</li>
+                                            </ul>
+                                            <h5><a href="${data[i].get_absolute_url}">${data[i].title}</a></h5>
+                                            <p> ${data[i].description.split(' ').slice(0, 90).join(' ')} </p>
+                                            <a href="${data[i].get_absolute_url}" class="blog__btn">{% trans 'READ MORE' %} <span class="arrow_right"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                `
+                            }
+                            })
+                        </script> -->
                         
                         <!-- <div class="col-lg-12">
                             <div class="product__pagination blog__pagination">

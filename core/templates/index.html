@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static custom-tags %}
 {% load static custom_tags %}
+{% load static customtags %}
 {% load i18n %}
 {% block content %}
 
@@ -201,9 +202,9 @@
                         <h4>{% trans 'Latest Products' %}</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                {% get_LatestProduct_all 0 3 as lproduct %}
-                                {% for i in lproduct %}
-                                <a href="#" class="latest-product__item">
+                                {% get_Product_all 0 3 as product %}
+                                {% for i in product %}
+                                <a href="{{ i.get_absolute_url }}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{ i.image.url }}" alt="">
                                     </div>
@@ -217,9 +218,9 @@
 
                             </div>
                             <div class="latest-prdouct__slider__item">
-                                {% get_LatestProduct_all 3 6 as lproduct %}
-                                {% for i in lproduct %}
-                                <a href="#" class="latest-product__item">
+                                {% get_Product_all 3 6 as product %}
+                                {% for i in product %}
+                                <a href="{{ i.get_absolute_url }}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{ i.image.url }}" alt="">
                                     </div>
@@ -239,9 +240,9 @@
                         <h4>{% trans 'Top Rated Products' %}</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                {% get_LatestProduct_all 0 3 as lproduct %}
-                                {% for i in lproduct %}
-                                <a href="#" class="latest-product__item">
+                                {% get_Product_all 0 3 as product %}
+                                {% for i in product %}
+                                <a href="{{ i.get_absolute_url }}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{ i.image.url }}" alt="">
                                     </div>
@@ -255,9 +256,9 @@
 
                             </div>
                             <div class="latest-prdouct__slider__item">
-                                {% get_LatestProduct_all 3 6 as lproduct %}
-                                {% for i in lproduct %}
-                                <a href="#" class="latest-product__item">
+                                {% get_Product_all 3 6 as product %}
+                                {% for i in product %}
+                                <a href="{{ i.get_absolute_url }}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{ i.image.url }}" alt="">
                                     </div>
@@ -278,9 +279,9 @@
                         <h4>{% trans 'Review Products' %}</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                {% get_LatestProduct_all 0 3 as lproduct %}
-                                {% for i in lproduct %}
-                                <a href="#" class="latest-product__item">
+                                {% get_Product_all 0 3 as product %}
+                                {% for i in product %}
+                                <a href="{{ i.get_absolute_url }}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{ i.image.url }}" alt="">
                                     </div>
@@ -294,9 +295,9 @@
 
                             </div>
                             <div class="latest-prdouct__slider__item">
-                                {% get_LatestProduct_all 3 6 as lproduct %}
-                                {% for i in lproduct %}
-                                <a href="#" class="latest-product__item">
+                                {% get_Product_all 3 6 as product %}
+                                {% for i in product %}
+                                <a href="{{ i.get_absolute_url }}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="{{ i.image.url }}" alt="">
                                     </div>

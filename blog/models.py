@@ -14,12 +14,23 @@ class AbstractModel(models.Model):
         abstract = True
 
 
+class Category(AbstractModel):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name_plural = ("Category")
+
+
 class Blog(AbstractModel):
     title = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='blog/%Y/%m/%d/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    slug = models.SlugField(max_length=100, editable=False)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    slug = models.SlugField(max_length=100)
 
     def __str__(self):
         return self.title
@@ -41,3 +52,7 @@ class News(AbstractModel):
     class Meta:
         verbose_name_plural = ("News")
     
+
+
+
+

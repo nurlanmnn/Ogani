@@ -3,9 +3,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 # from rest_framework import status 
-from .serializers import BlogSerializer, NewsSerializer, ProductSerializer
+from .serializers import BlogSerializer, GETBlogSerializer, NewsSerializer, POSTBlogSerializer, ProductSerializer, SubscriberSerializer
 from blog.models import Blog, News
 from shop.models import Product
+from core.models import Subscriber
 
 
 class BlogAPIView(APIView):
@@ -16,7 +17,7 @@ class BlogAPIView(APIView):
         return Response(data=serializer.data)
     
     def post(self, request, *args, **kwargs):
-        serializer = BlogSerializer(data=request.data)
+        serializer = POSTBlogSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -89,3 +90,47 @@ class ProductDetailAPIView(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except Product.DoesNotExist:
                 return Response({'error': 'id is invalid'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class BlogDetailAPIView(APIView):
+
+    def get(self, request, id, *args, **kwargs):
+        try:
+            blog = Blog.objects.get(id=id)
+            serializer = BlogSerializer(blog)
+            return Response(data=serializer.data, status=status.HTTP_200_OK)
+        except Blog.DoesNotExist:
+            return Response({'error': 'id is invalid'}, status=status.HTTP_400_BAD_REQUEST)
+    
+    def put(self, request, *args, **kwargs):
+        try:
+            blog = Blog.objects.get(id=kwargs['id'])
+            serializer = BlogSerializer(data=request.data, instance=blog, partial=True)
+            if serializer.is_valid(raise_exception=True):
+                serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Blog.DoesNotExist:
+            return Response({'error': 'id is invalid'}, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, id, *args, **kwargs):
+        try:
+            blog = Blog.objects.get(id=id)
+            blog.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Blog.DoesNotExist:
+                return Response({'error': 'id is invalid'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class SubscriberAPIView(APIView):
+
+    def get(self, request, *args, **kwargs):
+        sub = Subscriber.objects.all()
+        serializer = SubscriberSerializer(sub, many=True, context={'request': request})
+        return Response(data=serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        serializer = SubscriberSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)  
