@@ -29,7 +29,7 @@ class Setting(AbstractModel):
 
 
 class Subscriber(AbstractModel):
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100, unique=True, db_index=True)
 
     def __str__(self):
         return self.email
@@ -111,19 +111,6 @@ class FeaturedProduct(AbstractModel):
 
     class Meta:
         verbose_name_plural = ('Featured Products')
-    
-    def __str__(self):
-        return self.title
-
-
-class LatestProduct(AbstractModel):
-    title = models.CharField(max_length=100)
-    information = models.TextField()
-    image = models.ImageField(upload_to='media/latest_product')
-    price = models.CharField(max_length=100)
-
-    class Meta:
-        verbose_name_plural = ('Latest Products')
     
     def __str__(self):
         return self.title

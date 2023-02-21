@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-14 17:24+0400\n"
-"PO-Revision-Date: 2023-02-14 20:01+0400\n"
+"POT-Creation-Date: 2023-02-20 20:23+0400\n"
+"PO-Revision-Date: 2023-02-16 11:58+0400\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,6 +18,112 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: blog/templates/blog-details.html:17
+msgid "Comments"
+msgstr "Rəylər"
+
+#: blog/templates/blog-details.html:39 blog/templates/blog-details.html:105
+#: blog/templates/blog.html:40
+#, fuzzy
+#| msgid "All Categories"
+msgid "Categories"
+msgstr "Bütün Kateqoriyalar"
+
+#: blog/templates/blog-details.html:41 blog/templates/blog-details.html:106
+#: blog/templates/blog.html:42 core/templates/index.html:141
+msgid "All"
+msgstr "Hamısı"
+
+#: blog/templates/blog-details.html:42 blog/templates/blog.html:43
+msgid "Beauty (20)"
+msgstr "Gözəllik (20)"
+
+#: blog/templates/blog-details.html:43 blog/templates/blog.html:44
+msgid "Food (5)"
+msgstr "Ərzaq (5)"
+
+#: blog/templates/blog-details.html:44 blog/templates/blog.html:45
+msgid "Life Style (9)"
+msgstr "Həyat Tərzi (9)"
+
+#: blog/templates/blog-details.html:45 blog/templates/blog.html:46
+msgid "Travel (10)"
+msgstr "Səyahət (10)"
+
+#: blog/templates/blog-details.html:49 blog/templates/blog.html:50
+msgid "Recent News"
+msgstr "Son Xəbərlər"
+
+#: blog/templates/blog-details.html:66 blog/templates/blog.html:68
+msgid "Search By"
+msgstr "Axtar"
+
+#: blog/templates/blog-details.html:68 blog/templates/blog.html:70
+msgid "Apple"
+msgstr "Alma"
+
+#: blog/templates/blog-details.html:69 blog/templates/blog.html:71
+msgid "Beauty"
+msgstr "Gözəllik"
+
+#: blog/templates/blog-details.html:70 blog/templates/blog.html:72
+#: core/templates/index.html:43 core/templates/index.html:112
+#: core/templates/index.html:144 shop/templates/shop-grid.html:37
+msgid "Vegetables"
+msgstr "Tərəvəz"
+
+#: blog/templates/blog-details.html:71 blog/templates/blog.html:73
+#, fuzzy
+#| msgid "Dried Fruit"
+msgid "Fruit"
+msgstr "Quru Meyvə"
+
+#: blog/templates/blog-details.html:72 blog/templates/blog-details.html:106
+#: blog/templates/blog.html:74
+#, fuzzy
+#| msgid "Ocean Foods"
+msgid "Healthy Food"
+msgstr "Dəniz məhsulları"
+
+#: blog/templates/blog-details.html:73 blog/templates/blog.html:75
+msgid "Lifestyle"
+msgstr "Həyat Tərzi"
+
+#: blog/templates/blog-details.html:106
+msgid "Tags"
+msgstr "Teqlər"
+
+#: blog/templates/blog-details.html:106
+msgid "Trending"
+msgstr "Populyar"
+
+#: blog/templates/blog-details.html:106
+msgid "Cooking"
+msgstr "Bişirmə"
+
+#: blog/templates/blog-details.html:106
+msgid "Life Style"
+msgstr "Həyat Tərzi"
+
+#: blog/templates/blog-details.html:132
+msgid "Post You May Like"
+msgstr "Bəyənə Biləcəyiniz Postlar"
+
+#: blog/templates/blog.html:15 blog/templates/blog.html:18
+#: templates/_navbar.html:106
+msgid "Blog"
+msgstr "Bloq"
+
+#: blog/templates/blog.html:17 core/templates/contact.html:13
+#: shop/templates/shop-details.html:15 shop/templates/shop-grid.html:17
+#: templates/_navbar.html:96
+msgid "Home"
+msgstr "Əsas"
+
+#: blog/templates/blog.html:96 blog/templates/blog.html:123
+msgid "READ MORE"
+msgstr "Daha Çox"
 
 #: core/forms.py:11
 msgid "Enter your mail"
@@ -43,121 +149,136 @@ msgstr "Emailiniz"
 msgid "Your message"
 msgstr "İsmarıcınız"
 
-#: core/templates/index.html:38
+#: core/templates/contact.html:11 core/templates/contact.html:14
+#, fuzzy
+#| msgid "Contact"
+msgid "Contact Us"
+msgstr "Əlaqə"
+
+#: core/templates/contact.html:30
+msgid "Phone"
+msgstr "Telefon"
+
+#: core/templates/contact.html:37
+msgid "Address"
+msgstr "Ünvan"
+
+#: core/templates/contact.html:44
+msgid "Open time"
+msgstr "İş Saatı"
+
+#: core/templates/contact.html:84
+msgid "Leave Message"
+msgstr "Bizimlə Əlaqə"
+
+#: core/templates/index.html:39
 msgid "All departments"
 msgstr "Bütün bölmələr"
 
-#: core/templates/index.html:41 core/templates/index.html:142
+#: core/templates/index.html:42 core/templates/index.html:143
+#: shop/templates/shop-grid.html:36
 msgid "Fresh Meat"
 msgstr "Təzə Ət"
 
-#: core/templates/index.html:42 core/templates/index.html:111
-#: core/templates/index.html:143
-msgid "Vegetables"
-msgstr "Tərəvəz"
-
-#: core/templates/index.html:43
+#: core/templates/index.html:44 shop/templates/shop-grid.html:38
 msgid "Fruit & Nut Gifts"
 msgstr "Meyvə & Çərəz"
 
-#: core/templates/index.html:44
+#: core/templates/index.html:45 shop/templates/shop-grid.html:39
 msgid "Fresh Berries"
 msgstr "Yeni Giləmeyvələr"
 
-#: core/templates/index.html:45
+#: core/templates/index.html:46 shop/templates/shop-grid.html:40
 msgid "Ocean Foods"
 msgstr "Dəniz məhsulları"
 
-#: core/templates/index.html:46
+#: core/templates/index.html:47 shop/templates/shop-grid.html:41
 msgid "Butter & Eggs"
 msgstr "Yağ & Yumurta"
 
-#: core/templates/index.html:47 core/templates/index.html:144
+#: core/templates/index.html:48 core/templates/index.html:145
+#: shop/templates/shop-grid.html:42
 msgid "Fastfood"
 msgstr "Fastfood"
 
-#: core/templates/index.html:48
+#: core/templates/index.html:49 shop/templates/shop-grid.html:43
 msgid "Fresh Onion"
 msgstr "Yeni Soğan"
 
-#: core/templates/index.html:49
+#: core/templates/index.html:50 shop/templates/shop-grid.html:44
 msgid "Papayaya & Crisps"
 msgstr "Papayaya & Krisplər"
 
-#: core/templates/index.html:50
+#: core/templates/index.html:51 shop/templates/shop-grid.html:45
 msgid "Oatmeal"
 msgstr "Yulaf"
 
-#: core/templates/index.html:51
+#: core/templates/index.html:52 shop/templates/shop-grid.html:46
 msgid "Fresh Bananas"
 msgstr "Bananlar"
 
-#: core/templates/index.html:60
+#: core/templates/index.html:61
 msgid "All Categories"
 msgstr "Bütün Kateqoriyalar"
 
-#: core/templates/index.html:64
+#: core/templates/index.html:65
 msgid "SEARCH"
 msgstr "AXTAR"
 
-#: core/templates/index.html:75
+#: core/templates/index.html:76
 msgid "support 24/7 time"
 msgstr "24/7 dəstək"
 
-#: core/templates/index.html:81
+#: core/templates/index.html:82
 msgid "FRUIT FRESH"
 msgstr "YENİ MEYVƏ"
 
-#: core/templates/index.html:82
+#: core/templates/index.html:83
 msgid "Vegetable"
 msgstr "Tərəvəz"
 
-#: core/templates/index.html:82
+#: core/templates/index.html:83
 #, python-format
 msgid "100%% Organic"
 msgstr "100% Yeni"
 
-#: core/templates/index.html:83
+#: core/templates/index.html:84
 msgid "Free Pickup and Delivery Available"
 msgstr "Pulsuz Çatdırılma"
 
-#: core/templates/index.html:84
+#: core/templates/index.html:85
 msgid "SHOP NOW"
 msgstr "İNDİ ALIŞ-VERİŞ EDİN"
 
-#: core/templates/index.html:106
+#: core/templates/index.html:107
 msgid "Dried Fruit"
 msgstr "Quru Meyvə"
 
-#: core/templates/index.html:116 core/templates/index.html:121
+#: core/templates/index.html:117 core/templates/index.html:122
 msgid "drink fruits"
 msgstr "Gilə"
 
-#: core/templates/index.html:136
+#: core/templates/index.html:137
 msgid "Featured Product"
 msgstr "Önəçıxan Məhsullar"
 
-#: core/templates/index.html:140
-msgid "All"
-msgstr "Hamısı"
-
-#: core/templates/index.html:141
+#: core/templates/index.html:142
 msgid "Oranges"
 msgstr "Portağal"
 
-#: core/templates/index.html:201
+#: core/templates/index.html:202 shop/templates/shop-grid.html:135
 msgid "Latest Products"
 msgstr "Ən Son Məhsullar"
 
-#: core/templates/index.html:239
+#: core/templates/index.html:240
 msgid "Top Rated Products"
 msgstr "Ən Çox Satılanlar"
 
-#: core/templates/index.html:278
+#: core/templates/index.html:279
 msgid "Review Products"
 msgstr "Qerib Məhsullar"
 
-#: core/templates/index.html:325
+#: core/templates/index.html:326
 msgid "From The Blog"
 msgstr "Bloglardan"
 
@@ -168,6 +289,143 @@ msgstr "Ingilis"
 #: my_site/settings.py:140
 msgid "Azerbaijani"
 msgstr "Azərbaycan"
+
+#: shop/templates/shop-details.html:57
+msgid "reviews"
+msgstr "Rəylər"
+
+#: shop/templates/shop-details.html:68
+msgid "ADD TO CARD"
+msgstr "KARTA ƏLAVE EDİN"
+
+#: shop/templates/shop-details.html:71
+msgid "Availability"
+msgstr "Mövcudluğu"
+
+#: shop/templates/shop-details.html:71
+msgid "In Stock"
+msgstr "Stokda"
+
+#: shop/templates/shop-details.html:72
+msgid "Shipping"
+msgstr "Alış-veriş"
+
+#: shop/templates/shop-details.html:72
+msgid "day shipping"
+msgstr "Gündüz Alış-veriş"
+
+#: shop/templates/shop-details.html:72
+msgid "Free pickup today"
+msgstr "Bu gün pulsuz çatdırılma"
+
+#: shop/templates/shop-details.html:73
+msgid "Weight"
+msgstr "Çəki"
+
+#: shop/templates/shop-details.html:74
+msgid "Share on"
+msgstr "Paylaşın"
+
+#: shop/templates/shop-details.html:90
+msgid "Description"
+msgstr "Təsvir"
+
+#: shop/templates/shop-details.html:94
+#, fuzzy
+#| msgid "Innovation"
+msgid "Information"
+msgstr "Yenilik"
+
+#: shop/templates/shop-details.html:98
+#, fuzzy
+#| msgid "Review Products"
+msgid "Reviews"
+msgstr "Qerib Məhsullar"
+
+#: shop/templates/shop-details.html:104 shop/templates/shop-details.html:110
+#: shop/templates/shop-details.html:131
+msgid "Products Infomation"
+msgstr "Məhsul Haqqında"
+
+#: shop/templates/shop-details.html:159
+msgid "Related Product"
+msgstr "Önəçıxan Məhsullar"
+
+#: shop/templates/shop-grid.html:15
+#, fuzzy
+#| msgid "Organi Shop"
+msgid "Ogani Shop"
+msgstr "Ogani Mağazası"
+
+#: shop/templates/shop-grid.html:18 templates/_navbar.html:97
+msgid "Shop"
+msgstr "Məhsul"
+
+#: shop/templates/shop-grid.html:34
+#, fuzzy
+#| msgid "All departments"
+msgid "Departments"
+msgstr "Bütün bölmələr"
+
+#: shop/templates/shop-grid.html:50
+msgid "Price"
+msgstr "Qiymət"
+
+#: shop/templates/shop-grid.html:67
+msgid "Colors"
+msgstr "Rənglər"
+
+#: shop/templates/shop-grid.html:70
+msgid "White"
+msgstr "Ağ"
+
+#: shop/templates/shop-grid.html:76
+msgid "Gray"
+msgstr "Boz"
+
+#: shop/templates/shop-grid.html:82
+msgid "Red"
+msgstr "Qırmızı"
+
+#: shop/templates/shop-grid.html:88
+msgid "Black"
+msgstr "Qara"
+
+#: shop/templates/shop-grid.html:94
+msgid "Blue"
+msgstr "Mavi"
+
+#: shop/templates/shop-grid.html:100
+msgid "Green"
+msgstr "Yaşıl"
+
+#: shop/templates/shop-grid.html:106
+msgid "Popular Size"
+msgstr "Populyar Ölçü"
+
+#: shop/templates/shop-grid.html:109
+msgid "Large"
+msgstr "Large"
+
+#: shop/templates/shop-grid.html:115
+msgid "Medium"
+msgstr "Medium"
+
+#: shop/templates/shop-grid.html:121
+msgid "Small"
+msgstr "Small"
+
+#: shop/templates/shop-grid.html:127
+msgid "Tiny"
+msgstr "Tiny"
+
+#: shop/templates/shop-grid.html:179
+msgid "Sale Off"
+msgstr "Endirim"
+
+#: shop/templates/shop-grid.html:213
+msgid "Sort By"
+msgstr "Sırala"
 
 #: templates/_footer.html:21
 msgid "About Ogani"
@@ -221,22 +479,21 @@ msgstr "Yenilik"
 msgid "Testimonials"
 msgstr "Testimonial"
 
-#: templates/_footer.html:43
+#: templates/_footer.html:42
 msgid "Join Our Newsletter Now"
 msgstr ""
-"Yeniliklərdən və kampaniyalarımızdan xəbərdar olmaq istəyirsinizsə abunə "
-"olun"
+"Yeniliklərdən və kampaniyalarımızdan xəbərdar olmaq istəyirsinizsə abunə olun"
 
-#: templates/_footer.html:44
+#: templates/_footer.html:43
 msgid "Get E-mail updates about our latest shop and special offers."
 msgstr ""
 "Ən son mağazamız və xüsusi təkliflərimiz haqqında e-poçt yeniləmələri alın."
 
-#: templates/_footer.html:53
+#: templates/_footer.html:52
 msgid "Subscribe"
 msgstr "Abunə olun"
 
-#: templates/_footer.html:68
+#: templates/_footer.html:109
 msgid "All rights reserved"
 msgstr "Bütün hüquqlar qorunur"
 
@@ -255,14 +512,6 @@ msgstr "Daxil olun"
 #: templates/_navbar.html:77
 msgid "Register"
 msgstr "Qeydiyyat"
-
-#: templates/_navbar.html:96
-msgid "Home"
-msgstr "Əsas"
-
-#: templates/_navbar.html:97
-msgid "Shop"
-msgstr "Məhsul"
 
 #: templates/_navbar.html:98
 msgid "Pages"
@@ -284,10 +533,9 @@ msgstr "Yoxlanış"
 msgid "Blog Details"
 msgstr "Bloq detalları"
 
-#: templates/_navbar.html:106
-msgid "Blog"
-msgstr "Bloq"
-
 #: templates/_navbar.html:117
 msgid "item"
 msgstr "əşya"
+
+#~ msgid "Food"
+#~ msgstr "Ərzaq"

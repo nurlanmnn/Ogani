@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static custom-tags %}
 {% load static customtags %}
+{% load i18n %}
 {% block content %}
 
 
@@ -11,10 +12,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Organi Shop</h2>
+                        <h2>{% trans 'Ogani Shop' %}</h2>
                         <div class="breadcrumb__option">
-                            <a href="{% url 'index' %}">Home</a>
-                            <span>Shop</span>
+                            <a href="{% url 'index' %}">{% trans 'Home' %}</a>
+                            <span>{% trans 'Shop' %}</span>
                         </div>
                     </div>
                 </div>
@@ -30,22 +31,23 @@
                 <div class="col-lg-3 col-md-5">
                     <div class="sidebar">
                         <div class="sidebar__item">
-                            <h4>Department</h4>
+                            <h4>{% trans 'Departments' %}</h4>
                             <ul>
-                                <li><a href="#">Fresh Meat</a></li>
-                                <li><a href="#">Vegetables</a></li>
-                                <li><a href="#">Fruit & Nut Gifts</a></li>
-                                <li><a href="#">Fresh Berries</a></li>
-                                <li><a href="#">Ocean Foods</a></li>
-                                <li><a href="#">Butter & Eggs</a></li>
-                                <li><a href="#">Fastfood</a></li>
-                                <li><a href="#">Fresh Onion</a></li>
-                                <li><a href="#">Papayaya & Crisps</a></li>
-                                <li><a href="#">Oatmeal</a></li>
+                                <li><a href="#">{% trans 'Fresh Meat' %}</a></li>
+                                <li><a href="#">{% trans 'Vegetables' %}</a></li>
+                                <li><a href="#">{% trans 'Fruit & Nut Gifts' %}</a></li>
+                                <li><a href="#">{% trans 'Fresh Berries' %}</a></li>
+                                <li><a href="#">{% trans 'Ocean Foods' %}</a></li>
+                                <li><a href="#">{% trans 'Butter & Eggs' %}</a></li>
+                                <li><a href="#">{% trans 'Fastfood' %}</a></li>
+                                <li><a href="#">{% trans 'Fresh Onion' %}</a></li>
+                                <li><a href="#">{% trans 'Papayaya & Crisps' %}</a></li>
+                                <li><a href="#">{% trans 'Oatmeal' %}</a></li>
+                                <li><a href="#">{% trans 'Fresh Bananas' %}</a></li>
                             </ul>
                         </div>
                         <div class="sidebar__item">
-                            <h4>Price</h4>
+                            <h4>{% trans 'Price' %}</h4>
                             <div class="price-range-wrap">
                                 <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
                                     data-min="10" data-max="540">
@@ -62,67 +64,67 @@
                             </div>
                         </div>
                         <div class="sidebar__item sidebar__item__color--option">
-                            <h4>Colors</h4>
+                            <h4>{% trans 'Colors' %}</h4>
                             <div class="sidebar__item__color sidebar__item__color--white">
                                 <label for="white">
-                                    White
+                                    {% trans 'White' %}
                                     <input type="radio" id="white">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--gray">
                                 <label for="gray">
-                                    Gray
+                                    {% trans 'Gray' %}
                                     <input type="radio" id="gray">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--red">
                                 <label for="red">
-                                    Red
+                                    {% trans 'Red' %}
                                     <input type="radio" id="red">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--black">
                                 <label for="black">
-                                    Black
+                                    {% trans 'Black' %}
                                     <input type="radio" id="black">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--blue">
                                 <label for="blue">
-                                    Blue
+                                    {% trans 'Blue' %}
                                     <input type="radio" id="blue">
                                 </label>
                             </div>
                             <div class="sidebar__item__color sidebar__item__color--green">
                                 <label for="green">
-                                    Green
+                                    {% trans 'Green' %}
                                     <input type="radio" id="green">
                                 </label>
                             </div>
                         </div>
                         <div class="sidebar__item">
-                            <h4>Popular Size</h4>
+                            <h4>{% trans 'Popular Size' %}</h4>
                             <div class="sidebar__item__size">
                                 <label for="large">
-                                    Large
+                                    {% trans 'Large' %}
                                     <input type="radio" id="large">
                                 </label>
                             </div>
                             <div class="sidebar__item__size">
                                 <label for="medium">
-                                    Medium
+                                    {% trans 'Medium' %}
                                     <input type="radio" id="medium">
                                 </label>
                             </div>
                             <div class="sidebar__item__size">
                                 <label for="small">
-                                    Small
+                                    {% trans 'Small' %}
                                     <input type="radio" id="small">
                                 </label>
                             </div>
                             <div class="sidebar__item__size">
                                 <label for="tiny">
-                                    Tiny
+                                    {% trans 'Tiny' %}
                                     <input type="radio" id="tiny">
                                 </label>
                             </div>
@@ -130,12 +132,12 @@
                         <!-- Latest product starts -->
                         <div class="sidebar__item">
                             <div class="latest-product__text">
-                                <h4>Latest Products</h4>
+                                <h4>{% trans 'Latest Products' %}</h4>
                                 <div class="latest-product__slider owl-carousel">
                                     <div class="latest-prdouct__slider__item">
-                                        {% get_LatestProduct_all 0 3 as lproduct %}
-                                        {% for i in lproduct %}
-                                        <a href="#" class="latest-product__item">
+                                        {% get_Product_all 0 3 as fproduct %}
+                                        {% for i in fproduct %}
+                                        <a href="{{ i.get_absolute_url }}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="{{ i.image.url }}" alt="">
                                             </div>
@@ -149,9 +151,9 @@
 
                                     </div>
                                     <div class="latest-prdouct__slider__item">
-                                        {% get_LatestProduct_all 3 6 as lproduct %}
-                                        {% for i in lproduct %}
-                                        <a href="#" class="latest-product__item">
+                                        {% get_Product_all 3 6 as fproduct %}
+                                        {% for i in fproduct %}
+                                        <a href="{{ i.get_absolute_url }}" class="latest-product__item">
                                             <div class="latest-product__item__pic">
                                                 <img src="{{ i.image.url }}" alt="">
                                             </div>
@@ -174,7 +176,7 @@
                 <div class="col-lg-9 col-md-7">
                     <div class="product__discount">
                         <div class="section-title product__discount__title">
-                            <h2>Sale Off</h2>
+                            <h2>{% trans 'Sale Off' %}</h2>
                         </div>
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
@@ -208,7 +210,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
                                 <div class="filter__sort">
-                                    <span>Sort By</span>
+                                    <span>{% trans 'Sort By' %}</span>
                                     <select>
                                         <option value="0">Default</option>
                                         <option value="0">Default</option>
