@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 # from rest_framework import status 
-from .serializers import BlogSerializer, GETBlogSerializer, NewsSerializer, POSTBlogSerializer, ProductSerializer, SubscriberSerializer
+from .serializers import BlogSerializer, NewsSerializer, ProductSerializer, SubscriberSerializer
 from blog.models import Blog, News
 from shop.models import Product
 from core.models import Subscriber
@@ -17,7 +17,7 @@ class BlogAPIView(APIView):
         return Response(data=serializer.data)
     
     def post(self, request, *args, **kwargs):
-        serializer = POSTBlogSerializer(data=request.data)
+        serializer = BlogSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -96,8 +96,8 @@ class BlogDetailAPIView(APIView):
 
     def get(self, request, id, *args, **kwargs):
         try:
-            blog = Blog.objects.get(id=id)
-            serializer = BlogSerializer(blog)
+            post = Blog.objects.get(id=id)
+            serializer = BlogSerializer(post)
             return Response(data=serializer.data, status=status.HTTP_200_OK)
         except Blog.DoesNotExist:
             return Response({'error': 'id is invalid'}, status=status.HTTP_400_BAD_REQUEST)

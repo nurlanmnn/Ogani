@@ -25,36 +25,37 @@ class BlogSerializer(serializers.ModelSerializer):
             'description',
             'image',
             'author',
+            'category',
             'slug',
         )
 
 
-class GETBlogSerializer(serializers.ModelSerializer):
-    author = AuthorSerializer()
+# class GETBlogSerializer(serializers.ModelSerializer):
+#     author = AuthorSerializer()
 
-    class Meta:
-        model = Blog
-        fields = (
-            'title',
-            'description',
-            'image',
-            'author',
-            'slug',
-        )
+#     class Meta:
+#         model = Blog
+#         fields = (
+#             'title',
+#             'description',
+#             'image',
+#             'author',
+#             'slug',
+#         )
 
 
-class POSTBlogSerializer(serializers.ModelSerializer):
-    author = AuthorSerializer()
+# class POSTBlogSerializer(serializers.ModelSerializer):
+#     author = AuthorSerializer()
 
-    class Meta:
-        model = Blog
-        fields = (
-            'title',
-            'description',
-            'image',
-            'author',
-            'slug',
-        )
+#     class Meta:
+#         model = Blog
+#         fields = (
+#             'title',
+#             'description',
+#             'image',
+#             'author',
+#             'slug',
+#         )
 
 
 class NewsSerializer(serializers.ModelSerializer):
