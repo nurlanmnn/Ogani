@@ -29,7 +29,8 @@ class Blog(AbstractModel):
     description = models.TextField()
     image = models.ImageField(upload_to='blog/%Y/%m/%d/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    author_image = models.ImageField(upload_to='author/%Y/%m/%d/')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default="uncategorized")
     slug = models.SlugField(max_length=100)
 
     def __str__(self):

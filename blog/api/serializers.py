@@ -1,8 +1,10 @@
 from rest_framework import serializers
-from blog.models import Blog, News
+from blog.models import Blog, News, Category
 from shop.models import Product
 from core.models import Subscriber
 from baseuser.models import MyUser
+from django.urls import reverse
+
 
 
 class AuthorSerializer(serializers.ModelSerializer):
@@ -15,8 +17,19 @@ class AuthorSerializer(serializers.ModelSerializer):
         )
 
 
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = (
+            'id',
+            'name',
+        )
+
+
 class BlogSerializer(serializers.ModelSerializer):
     author = AuthorSerializer()
+    category = CategorySerializer()
+    url = serializers.SerializerMethodField()
 
     class Meta:
         model = Blog
@@ -27,7 +40,11 @@ class BlogSerializer(serializers.ModelSerializer):
             'author',
             'category',
             'slug',
+            'url',
         )
+    
+    def get_url(self, obj):
+        return reverse('blog_details', kwargs={'slug': obj.slug})
 
 
 # class GETBlogSerializer(serializers.ModelSerializer):
@@ -78,12 +95,20 @@ class ProductSerializer(serializers.ModelSerializer):
             'title',
             'description',
             'image',
+            'image2',
+            'image3',
+            'image4',
             'slug',
             'category',
             'price',
             'discounted_price',
             'discount_percentage',
         )
+        extra_kwargs = {
+            'image2': {'required': False},
+            'image3': {'required': False},
+            'image4': {'required': False},
+        }
 
 
 class SubscriberSerializer(serializers.ModelSerializer):
