@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
+# from shop.models import Product
+
 User = get_user_model()
 
 # Create your models here.
@@ -85,6 +87,7 @@ class Image(AbstractModel):
     id = models.AutoField(primary_key=True)
     image = models.ImageField(upload_to='media/aboutus')
     about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
+    # product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.about_us.title

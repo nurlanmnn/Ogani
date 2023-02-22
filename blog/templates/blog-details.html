@@ -91,7 +91,7 @@
                             <div class="col-lg-6">
                                 <div class="blog__details__author">
                                     <div class="blog__details__author__pic">
-                                        <img src="{% static 'img/blog/details/details-author.jpg' %}" alt="">
+                                        <img src="{{ post.author_image.url }}" alt="">
                                     </div>
                                     <div class="blog__details__author__text">
                                         <h6>{{ post.author }}</h6>

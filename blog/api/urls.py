@@ -14,6 +14,6 @@ urlpatterns = [
     path('news/', NewsAPIView.as_view(), name='news'),
     path('products/', ProductAPIView.as_view(), name='products'),
     path('products/<int:id>/', ProductDetailAPIView.as_view(), name='product'),
-    path('blogs/<int:id>/', BlogDetailAPIView.as_view(), name='blog'),
+    path('blogs/<int:id>/', BlogDetailAPIView.as_view(), name='blog_details'),
     path('subscriber/', SubscriberAPIView.as_view(), name='subscriber'),
 ]

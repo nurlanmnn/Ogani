@@ -2,12 +2,16 @@
 from django.shortcuts import render
 from .models import Blog, News
 from django.views.generic import ListView
+
+# from django.urls import reverse_lazy
+# from django.http import JsonResponse
+# from .models import Blog
 # from django.core.paginator import Paginator
 
 
 # Create your views here.
 
-def blog(request):
+def news(request):
     # blog = Blog.objects.first()
     news = News.objects.first()
     context = {
@@ -32,4 +36,4 @@ class BlogListView(ListView):
 
     def get_queryset(self):
         return self.model.objects.all().order_by('-created_at')
-
+    
