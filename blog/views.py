@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from .models import Blog, News
+from .models import Blog, Category, News
 from django.views.generic import ListView
 
 # from django.urls import reverse_lazy
@@ -34,6 +34,17 @@ class BlogListView(ListView):
     context_object_name = 'blog'
     paginate_by = 2
 
-    def get_queryset(self):
-        return self.model.objects.all().order_by('-created_at')
+    # def get_queryset(self):
+    #     return self.model.objects.all().order_by('-created_at')
     
+    def get_queryset(self):
+        queryset = super().get_queryset().order_by('-created_at')
+        category_name = self.kwargs.get('category_name')
+        if category_name:
+            queryset = queryset.filter(category__name=category_name)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categorie'] = Category.objects.all()
+        return context

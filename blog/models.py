@@ -1,6 +1,6 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth import get_user_model
-
 
 User = get_user_model()
 # Create your models here.
@@ -22,6 +22,10 @@ class Category(AbstractModel):
     
     class Meta:
         verbose_name_plural = ("Category")
+    
+    def get_absolute_url(self):
+        return reverse('categorie', args=[self.name])
+        # return reverse('categorie', arg=self.name)
 
 
 class Blog(AbstractModel):

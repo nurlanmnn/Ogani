@@ -24,6 +24,9 @@ class Category(AbstractModel):
     
     class Meta:
         verbose_name_plural = ("Category")
+    
+    def get_absolute_url(self):
+        return reverse('categories', args=[self.name])
 
 
 class Product(AbstractModel):
@@ -51,6 +54,8 @@ class Product(AbstractModel):
     
     def get_absolute_url(self):
         return reverse('shopdetails', kwargs={'slug': self.slug})
+
+
 
 
 

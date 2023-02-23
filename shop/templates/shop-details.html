@@ -68,7 +68,9 @@
                             <i class="fa fa-star-half-o"></i>
                             <span>(18 {% trans 'reviews' %})</span>
                         </div>
-                        <div class="product__details__price">$ {{ product.price }}</div>
+                        <div class="product__discount__percent">-{{ product.discount_percentage }}%</div>
+                        <div class="product__item__price"><s>$ {{ product.price }}</s></div>
+                        <div class="product__details__price">$ {{ product.discounted_price }}</div>
                         <p>{{ product.description|truncatechars:240 }} </p>
                         <div class="product__details__quantity">
                             <div class="quantity">

@@ -33,7 +33,8 @@
                         <div class="sidebar__item">
                             <h4>{% trans 'Departments' %}</h4>
                             <ul>
-                                <li><a href="#">{% trans 'Fresh Meat' %}</a></li>
+                                <li><a href="{% url 'all_categories' %}">{% trans 'All' %}</a></li>
+                                <!-- <li><a href="#">{% trans 'Fresh Meat' %}</a></li>
                                 <li><a href="#">{% trans 'Vegetables' %}</a></li>
                                 <li><a href="#">{% trans 'Fruit & Nut Gifts' %}</a></li>
                                 <li><a href="#">{% trans 'Fresh Berries' %}</a></li>
@@ -43,7 +44,12 @@
                                 <li><a href="#">{% trans 'Fresh Onion' %}</a></li>
                                 <li><a href="#">{% trans 'Papayaya & Crisps' %}</a></li>
                                 <li><a href="#">{% trans 'Oatmeal' %}</a></li>
-                                <li><a href="#">{% trans 'Fresh Bananas' %}</a></li>
+                                <li><a href="#">{% trans 'Fresh Bananas' %}</a></li> -->
+                                {% for category in categories %}
+                                <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+                                {% empty %}
+                                <p>No products found in this category.</p>
+                                {% endfor %}
                             </ul>
                         </div>
                         <div class="sidebar__item">
@@ -193,7 +199,7 @@
                                             </ul>
                                         </div>
                                         <div class="product__discount__item__text">
-                                            <span>{{ i.category }}</span>
+                                            <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
                                             <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
                                             <div class="product__item__price">$ {{ i.discounted_price }}<span>${{ i.price }}</span></div>
                                         </div>
@@ -242,7 +248,8 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h6>
+                                    <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
+                                    <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
                                     <h5>$ {{ i.price }}</h5>
                                 </div>
                             </div>

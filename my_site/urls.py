@@ -62,8 +62,8 @@ urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     path('', include(core_urls)),
     path('', include(base_urls)),
-    path('blog', include(blog_urls)),
-    path('shop', include(shop_urls)),
+    path('blog/', include(blog_urls)),
+    path('shop/', include(shop_urls)),
 )
 
 # urlpatterns += [
