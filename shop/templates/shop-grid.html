@@ -31,6 +31,14 @@
                 <div class="col-lg-3 col-md-5">
                     <div class="sidebar">
                         <div class="sidebar__item">
+                            
+                            <div class="blog__sidebar__search">
+                                <form method="get" action="{% url 'shop' %}" class="d-flex">
+                                    <input value="" name="product_name" type="text" placeholder="Search...">
+                                    <button id="btnSearchFiles" type="submit"><span class="icon_search"></span></button>
+                                </form>
+                            </div>
+
                             <h4>{% trans 'Departments' %}</h4>
                             <ul>
                                 <li><a href="{% url 'all_categories' %}">{% trans 'All' %}</a></li>
@@ -108,7 +116,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="sidebar__item">
+                        <!-- <div class="sidebar__item">
                             <h4>{% trans 'Popular Size' %}</h4>
                             <div class="sidebar__item__size">
                                 <label for="large">
@@ -134,7 +142,7 @@
                                     <input type="radio" id="tiny">
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Latest product starts -->
                         <div class="sidebar__item">
                             <div class="latest-product__text">
@@ -179,7 +187,9 @@
                 <!-- Latest product ends -->
                 
                 <!-- Sale off starts -->
+                
                 <div class="col-lg-9 col-md-7">
+                    {% comment %}
                     <div class="product__discount">
                         <div class="section-title product__discount__title">
                             <h2>{% trans 'Sale Off' %}</h2>
@@ -209,6 +219,7 @@
                             </div>
                         </div>
                     </div>
+                {% endcomment %}
                     <!-- Sale off ends -->
 
                     <!-- Products section starts -->

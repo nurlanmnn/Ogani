@@ -36,7 +36,6 @@ class Product(AbstractModel):
     image2 = models.ImageField(upload_to='media/shopp2', null=True, blank=True)
     image3 = models.ImageField(upload_to='media/shopp3', null=True, blank=True)
     image4 = models.ImageField(upload_to='media/shopp4', null=True, blank=True)
-    # image5 = models.ImageField(upload_to='media/shopp5', null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     discount_percentage = models.FloatField(default=0.0)
     discounted_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.0)

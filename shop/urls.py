@@ -7,7 +7,7 @@ urlpatterns = [
     path('<slug:slug>/', shop_details, name='shopdetails'),
     path('shopingcart/', shoping_cart, name='shopingcart'),
     path('categories/all', ProductListView.as_view(), name='all_categories'),
-    path('<str:category_name>/', ProductListView.as_view(), name='categories'),
-    path('sale/', sale, name='sales')
+    path('categories/<str:category_name>/', ProductListView.as_view(), name='categories'),
+    path('sale/', sale, name='sales'),
 ]
 
