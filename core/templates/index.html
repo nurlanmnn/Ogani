@@ -39,7 +39,8 @@
                         <span>{% trans 'All departments' %}</span>
                     </div>
                     <ul>
-                        <li><a href="#">{% trans 'Fresh Meat' %}</a></li>
+                        <li><a href="{% url 'all_categories' %}">{% trans 'All' %}</a></li>
+                        <!-- <li><a href="#">{% trans 'Fresh Meat' %}</a></li>
                         <li><a href="#">{% trans 'Vegetables' %}</a></li>
                         <li><a href="#">{% trans 'Fruit & Nut Gifts' %}</a></li>
                         <li><a href="#">{% trans 'Fresh Berries' %}</a></li>
@@ -49,20 +50,26 @@
                         <li><a href="#">{% trans 'Fresh Onion' %}</a></li>
                         <li><a href="#">{% trans 'Papayaya & Crisps' %}</a></li>
                         <li><a href="#">{% trans 'Oatmeal' %}</a></li>
-                        <li><a href="#">{% trans 'Fresh Bananas' %}</a></li>
+                        <li><a href="#">{% trans 'Fresh Bananas' %}</a></li> -->
+                        {% get_Category_all as cat %}
+                        {% for category in cat %}
+                        <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+                        {% empty %}
+                        <p>No products found in this category.</p>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
-                        <form action="#">
-                            <div class="hero__search__categories">
+                        <form method="get" action="{% url 'shop' %}">
+                            <!-- <div class="hero__search__categories">
                                 {% trans 'All Categories' %}
                                 <span class="arrow_carrot-down"></span>
-                            </div>
-                            <input type="text" placeholder="What do you need?">
-                            <button type="submit" class="site-btn">{% trans 'SEARCH' %}</button>
+                            </div> -->
+                            <input value="" name="product_name" type="text" placeholder="What do you need?">
+                            <button id="btnSearchFiles" type="submit" class="site-btn">{% trans 'SEARCH' %}</button>
                         </form>
                     </div>
                     <div class="hero__search__phone">
@@ -174,7 +181,7 @@
     <!-- Featured Section End -->
 
     <!-- Banner Begin -->
-    <div class="banner">
+    <!-- <div class="banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -189,7 +196,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Banner End -->
 
     <!-- Latest Product Section Begin -->
@@ -204,7 +211,7 @@
                             <div class="latest-prdouct__slider__item">
                                 {% get_Product_all 0 3 as product %}
                                 {% for i in product %}
-                                <a href="{{ i.get_absolute_url }}" class="latest-product__item">
+                                <a href="{{ i.get_absolute_url }}" class="latest-product__item" >
                                     <div class="latest-product__item__pic">
                                         <img src="{{ i.image.url }}" alt="">
                                     </div>

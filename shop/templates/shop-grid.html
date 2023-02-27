@@ -31,19 +31,22 @@
                 <div class="col-lg-3 col-md-5">
                     <div class="sidebar">
                         <div class="sidebar__item">
+                            
+                            <div class="blog__sidebar__search">
+                                <form method="get" action="{% url 'shop' %}" class="d-flex">
+                                    <input value="" name="product_name" type="text" placeholder="Search...">
+                                    <button id="btnSearchFiles" type="submit"><span class="icon_search"></span></button>
+                                </form>
+                            </div>
+
                             <h4>{% trans 'Departments' %}</h4>
                             <ul>
-                                <li><a href="#">{% trans 'Fresh Meat' %}</a></li>
-                                <li><a href="#">{% trans 'Vegetables' %}</a></li>
-                                <li><a href="#">{% trans 'Fruit & Nut Gifts' %}</a></li>
-                                <li><a href="#">{% trans 'Fresh Berries' %}</a></li>
-                                <li><a href="#">{% trans 'Ocean Foods' %}</a></li>
-                                <li><a href="#">{% trans 'Butter & Eggs' %}</a></li>
-                                <li><a href="#">{% trans 'Fastfood' %}</a></li>
-                                <li><a href="#">{% trans 'Fresh Onion' %}</a></li>
-                                <li><a href="#">{% trans 'Papayaya & Crisps' %}</a></li>
-                                <li><a href="#">{% trans 'Oatmeal' %}</a></li>
-                                <li><a href="#">{% trans 'Fresh Bananas' %}</a></li>
+                                <li><a href="{% url 'all_categories' %}">{% trans 'All' %}</a></li>
+                                {% for category in categories %}
+                                <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+                                {% empty %}
+                                <p>No products found in this category.</p>
+                                {% endfor %}
                             </ul>
                         </div>
                         <div class="sidebar__item">
@@ -102,7 +105,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="sidebar__item">
+                        <!-- <div class="sidebar__item">
                             <h4>{% trans 'Popular Size' %}</h4>
                             <div class="sidebar__item__size">
                                 <label for="large">
@@ -128,7 +131,7 @@
                                     <input type="radio" id="tiny">
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Latest product starts -->
                         <div class="sidebar__item">
                             <div class="latest-product__text">
@@ -173,7 +176,9 @@
                 <!-- Latest product ends -->
                 
                 <!-- Sale off starts -->
+                
                 <div class="col-lg-9 col-md-7">
+                    {% comment %}
                     <div class="product__discount">
                         <div class="section-title product__discount__title">
                             <h2>{% trans 'Sale Off' %}</h2>
@@ -193,7 +198,7 @@
                                             </ul>
                                         </div>
                                         <div class="product__discount__item__text">
-                                            <span>{{ i.category }}</span>
+                                            <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
                                             <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
                                             <div class="product__item__price">$ {{ i.discounted_price }}<span>${{ i.price }}</span></div>
                                         </div>
@@ -203,6 +208,7 @@
                             </div>
                         </div>
                     </div>
+                {% endcomment %}
                     <!-- Sale off ends -->
 
                     <!-- Products section starts -->
@@ -242,8 +248,18 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h6>
-                                    <h5>$ {{ i.price }}</h5>
+                                    <!-- <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
+                                    <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
+                                    <h5>$ {{ i.price }}</h5> -->
+                                    <div class="product__discount__item__text">
+                                        <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
+                                        <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
+                                        {% if i.discounted_price == i.price %}
+                                        <h5>$ {{ i.price }}</h5>
+                                        {% else %}
+                                        <div class="product__item__price">$ {{ i.discounted_price }}<span>${{ i.price }}</span></div>
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
