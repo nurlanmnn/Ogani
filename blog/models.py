@@ -14,14 +14,14 @@ class AbstractModel(models.Model):
         abstract = True
 
 
-class Category(AbstractModel):
+class BlogCategory(AbstractModel):
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
     
     class Meta:
-        verbose_name_plural = ("Category")
+        verbose_name_plural = ("BlogCategory")
     
     def get_absolute_url(self):
         return reverse('category', args=[self.name])
@@ -33,7 +33,7 @@ class Blog(AbstractModel):
     image = models.ImageField(upload_to='blog/%Y/%m/%d/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     author_image = models.ImageField(upload_to='author/%Y/%m/%d/')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100)
 
     def __str__(self):

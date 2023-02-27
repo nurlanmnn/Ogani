@@ -30,32 +30,24 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
-                            <img class="product__details__pic__item--large"
-                                src="{{ product.image.url }}" alt="">
+                            <img class="product__details__pic__item--large" src="{{ product.image.url }}" alt="">
                         </div>
-                        <div class="product__details__pic__slider owl-carousel">
-                            <img class="product__details__pic__item--large"
-                                src="{{ product.image.url }}" alt="">
-                            {% if product.image2 %}
-                                <img data-imgbigurl="{{ product.image2.url }}" src="{{ product.image2.url }}" alt="">
-                            {% else %}
-                                <img src="" alt="">
-                            {% endif %}
-                            
-                            {% if product.image3 %}
-                                <img data-imgbigurl="{{ product.image3.url }}" src="{{ product.image3.url }}" alt="">
-                            {% else %}
-                                <img src="" alt="">
-                            {% endif %}
-
-                            {% if product.image4 %}
-                                <img data-imgbigurl="{{ product.image4.url }}" src="{{ product.image4.url }}" alt="">
-                            {% else %}
-                                <img src="" alt="">
-                            {% endif %}
-                            
-                        </div>
+                        {% if product.image2 or product.image3 or product.image4 %}
+                            <div class="product__details__pic__slider owl-carousel">
+                                <img class="product__details__pic__item--large" src="{{ product.image.url }}" alt="">
+                                {% if product.image2 %}
+                                    <img data-imgbigurl="{{ product.image2.url }}" src="{{ product.image2.url }}" alt="">
+                                {% endif %}
+                                {% if product.image3 %}
+                                    <img data-imgbigurl="{{ product.image3.url }}" src="{{ product.image3.url }}" alt="">
+                                {% endif %}
+                                {% if product.image4 %}
+                                    <img data-imgbigurl="{{ product.image4.url }}" src="{{ product.image4.url }}" alt="">
+                                {% endif %}
+                            </div>
+                        {% endif %}
                     </div>
+                    
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__text">

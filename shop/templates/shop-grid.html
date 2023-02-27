@@ -42,17 +42,6 @@
                             <h4>{% trans 'Departments' %}</h4>
                             <ul>
                                 <li><a href="{% url 'all_categories' %}">{% trans 'All' %}</a></li>
-                                <!-- <li><a href="#">{% trans 'Fresh Meat' %}</a></li>
-                                <li><a href="#">{% trans 'Vegetables' %}</a></li>
-                                <li><a href="#">{% trans 'Fruit & Nut Gifts' %}</a></li>
-                                <li><a href="#">{% trans 'Fresh Berries' %}</a></li>
-                                <li><a href="#">{% trans 'Ocean Foods' %}</a></li>
-                                <li><a href="#">{% trans 'Butter & Eggs' %}</a></li>
-                                <li><a href="#">{% trans 'Fastfood' %}</a></li>
-                                <li><a href="#">{% trans 'Fresh Onion' %}</a></li>
-                                <li><a href="#">{% trans 'Papayaya & Crisps' %}</a></li>
-                                <li><a href="#">{% trans 'Oatmeal' %}</a></li>
-                                <li><a href="#">{% trans 'Fresh Bananas' %}</a></li> -->
                                 {% for category in categories %}
                                 <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
                                 {% empty %}
@@ -259,9 +248,18 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
+                                    <!-- <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
                                     <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
-                                    <h5>$ {{ i.price }}</h5>
+                                    <h5>$ {{ i.price }}</h5> -->
+                                    <div class="product__discount__item__text">
+                                        <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
+                                        <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
+                                        {% if i.discounted_price == i.price %}
+                                        <h5>$ {{ i.price }}</h5>
+                                        {% else %}
+                                        <div class="product__item__price">$ {{ i.discounted_price }}<span>${{ i.price }}</span></div>
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
