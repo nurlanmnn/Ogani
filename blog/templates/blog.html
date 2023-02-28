@@ -31,7 +31,7 @@
                     <div class="blog__sidebar">
                         <div class="blog__sidebar__search">
                             <form method="get" action="{% url 'blog' %}" class="d-flex">
-                                <input value="" name="blog_name" type="text" placeholder="Search...">
+                                <input value="{{ request.GET.blog_name }}" name="blog_name" type="text" placeholder="Search...">
                                 <button id="btnSearchFiles" type="submit"><span class="icon_search"></span></button>
                             </form>
                         </div>
@@ -138,7 +138,7 @@
                             </div>
                         </div> -->
                            
-                           <div class="col-lg-12">
+                        <div class="col-lg-12">
                             <div class="product__pagination blog__pagination">
                                 {% if is_paginated %}
                                 {% if page_obj.has_previous %}

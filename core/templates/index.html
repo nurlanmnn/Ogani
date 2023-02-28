@@ -40,17 +40,6 @@
                     </div>
                     <ul>
                         <li><a href="{% url 'all_categories' %}">{% trans 'All' %}</a></li>
-                        <!-- <li><a href="#">{% trans 'Fresh Meat' %}</a></li>
-                        <li><a href="#">{% trans 'Vegetables' %}</a></li>
-                        <li><a href="#">{% trans 'Fruit & Nut Gifts' %}</a></li>
-                        <li><a href="#">{% trans 'Fresh Berries' %}</a></li>
-                        <li><a href="#">{% trans 'Ocean Foods' %}</a></li>
-                        <li><a href="#">{% trans 'Butter & Eggs' %}</a></li>
-                        <li><a href="#">{% trans 'Fastfood' %}</a></li>
-                        <li><a href="#">{% trans 'Fresh Onion' %}</a></li>
-                        <li><a href="#">{% trans 'Papayaya & Crisps' %}</a></li>
-                        <li><a href="#">{% trans 'Oatmeal' %}</a></li>
-                        <li><a href="#">{% trans 'Fresh Bananas' %}</a></li> -->
                         {% get_Category_all as cat %}
                         {% for category in cat %}
                         <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
@@ -100,7 +89,7 @@
 
 
     <!-- Categories Section Begin -->
-    <section class="categories">
+    <!-- <section class="categories">
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
@@ -132,7 +121,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Categories Section End -->
 
     <!-- Featured Section Begin -->
@@ -145,17 +134,24 @@
                     </div>
                     <div class="featured__controls">
                         <ul>
-                            <li class="active" data-filter="*">{% trans 'All' %}</li>
+                            <!-- <li class="active" data-filter="*">{% trans 'All' %}</li>
                             <li data-filter=".oranges">{% trans 'Oranges' %}</li>
                             <li data-filter=".fresh-meat">{% trans 'Fresh Meat' %}</li>
                             <li data-filter=".vegetables">{% trans 'Vegetables' %}</li>
-                            <li data-filter=".fastfood">{% trans 'Fastfood' %}</li>
+                            <li data-filter=".fastfood">{% trans 'Fastfood' %}</li> -->
+                            <li><a data-filter="*">{% trans 'All' %}</a></li>
+                            {% get_Category_all as cat %}
+                            {% for category in cat %}
+                            <li><a data-filter="{{ category.category }}">{{ category.name }}</a></li>
+                            {% empty %}
+                            <p>No products found in this category.</p>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
             </div>
             
-                {% get_FeaturedProduct_all 0 8 as fproduct %}
+                {% get_Product_all 3 6 as fproduct %}
                 {% for i in fproduct %}
             <div class="row featured__filter">
                 <div class="col-lg-6 col-sm-12 mix oranges fresh-meat">
@@ -168,7 +164,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{ i.title }}</a></h6>
+                            <h6><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h6>
                             <h5>{{ i.price }}</h5>
                         </div>
                     </div>
@@ -213,7 +209,7 @@
                                 {% for i in product %}
                                 <a href="{{ i.get_absolute_url }}" class="latest-product__item" >
                                     <div class="latest-product__item__pic">
-                                        <img src="{{ i.image.url }}" alt="">
+                                        <img src="{{ i.image.url }}" width="110" height="110" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>

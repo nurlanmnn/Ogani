@@ -60,9 +60,13 @@
                             <i class="fa fa-star-half-o"></i>
                             <span>(18 {% trans 'reviews' %})</span>
                         </div>
+                        
+                        {% if product.discounted_price == product.price %}
+                        <div class="product__details__price">$ {{ product.price }}</div>
+                        {% else %}
                         <div class="product__discount__percent">-{{ product.discount_percentage }}%</div>
-                        <div class="product__item__price"><s>$ {{ product.price }}</s></div>
-                        <div class="product__details__price">$ {{ product.discounted_price }}</div>
+                        <div class="product__details__price">$ {{ product.discounted_price }} <s>$ {{ product.price }}</s></div>
+                        {% endif %}
                         <p>{{ product.description|truncatechars:240 }} </p>
                         <div class="product__details__quantity">
                             <div class="quantity">
@@ -180,7 +184,11 @@
                         </div>
                         <div class="product__item__text">
                             <h6><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h6>
+                            {% if i.discount_percentage == 0.0 %}
                             <h5>$ {{ i.price }}</h5>
+                            {% else %}
+                            <h5>$ {{ i.discounted_price }}<s> ${{ i.price }}</s></h5>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
