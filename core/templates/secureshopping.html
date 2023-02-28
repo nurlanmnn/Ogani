@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<div class="about-us-wrapper pt-70 pb-70 pt-lg-60 pb-lg-60 pb-md-60 pt-sm-50 pb-sm-42">
+    <div class="container">
+        <div class="row">
+            <!-- About Text Start -->
+            <div class="col-lg-6 order-last order-lg-first">
+                <div class="about-text-wrap">
+                    <h2><span>{{ secureshopping.title }}</h2>
+                    <br>
+                    <p>{{ secureshopping.text }}</p>
+                </div>
+            </div>
+            <!-- About Text End -->
+            <!-- About Image Start -->
+            <div class="col-lg-5 col-md-10 m-md-auto ms-auto">
+                <div class="about-image-wrap">
+                    <img src="{{ settings.logo.url }}" alt="Secure" />
+                </div>
+            </div>
+            <!-- About Image End -->
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -37,15 +37,15 @@ class BlogListView(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         blog_name = self.request.GET.get('blog_name')
-        categoryy_name = self.kwargs.get('categoryy_name')
-        if categoryy_name:
-            queryset = queryset.filter(category__name=categoryy_name)
+        category_name = self.kwargs.get('category_name')
+        if category_name:
+            queryset = queryset.filter(category__name=category_name)
         if blog_name:
             queryset = queryset.filter(title__icontains=blog_name)
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['blog'] = Blog.objects.all()
+        # context['blog'] = Blog.objects.all()
         context['category'] = BlogCategory.objects.all()
         return context

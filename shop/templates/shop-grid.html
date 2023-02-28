@@ -49,7 +49,8 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        <div class="sidebar__item">
+
+                        <!-- <div class="sidebar__item">
                             <h4>{% trans 'Price' %}</h4>
                             <div class="price-range-wrap">
                                 <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
@@ -65,7 +66,30 @@
                                     </div>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="sidebar__item">
+                            <h4>{% trans 'Price' %}</h4>
+                            <div class="price-range-wrap">
+                                <form method="get" action="">
+                                    <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                                        data-min="6" data-max="100">
+                                        <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                    </div>
+                                    <div class="range-slider">
+                                        <div class="price-input">
+                                            <input type="text" name="min_price" id="minamount">
+                                            <input type="text" name="max_price" id="maxamount">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="site-btn">{% trans 'Apply' %}</button>
+                                </form>
+                            </div>
                         </div>
+                        
+                        
                         <div class="sidebar__item sidebar__item__color--option">
                             <h4>{% trans 'Colors' %}</h4>
                             <div class="sidebar__item__color sidebar__item__color--white">
