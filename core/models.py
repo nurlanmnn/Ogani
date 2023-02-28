@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
+# from shop.models import Product
+
 User = get_user_model()
 
 # Create your models here.
@@ -29,7 +31,7 @@ class Setting(AbstractModel):
 
 
 class Subscriber(AbstractModel):
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100, unique=True, db_index=True)
 
     def __str__(self):
         return self.email
@@ -85,6 +87,7 @@ class Image(AbstractModel):
     id = models.AutoField(primary_key=True)
     image = models.ImageField(upload_to='media/aboutus')
     about_us = models.ForeignKey(AboutUs, on_delete=models.CASCADE)
+    # product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.about_us.title
@@ -111,19 +114,6 @@ class FeaturedProduct(AbstractModel):
 
     class Meta:
         verbose_name_plural = ('Featured Products')
-    
-    def __str__(self):
-        return self.title
-
-
-class LatestProduct(AbstractModel):
-    title = models.CharField(max_length=100)
-    information = models.TextField()
-    image = models.ImageField(upload_to='media/latest_product')
-    price = models.CharField(max_length=100)
-
-    class Meta:
-        verbose_name_plural = ('Latest Products')
     
     def __str__(self):
         return self.title

@@ -8,43 +8,6 @@ app = Celery('my_site.settings')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
-# @app.task(bind=True)
-# def debug_task(self):
-#     print(f'Request: {self.requests})
-          
-
-
-# a=[34,56,78,90,87]
-# if 34 in a:
-    
-
-
-
-
-
-
-
-
-
-          
-
-
-
-
-          
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
+@app.task(bind=True)
+def debug_task(self):
+    print(f'Request: {self.request!r}')

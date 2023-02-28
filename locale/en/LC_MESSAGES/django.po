@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-14 17:24+0400\n"
+"POT-Creation-Date: 2023-02-27 18:46+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,107 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/templates/blog-details.html:17
+msgid "Comments"
+msgstr ""
+
+#: blog/templates/blog-details.html:39 blog/templates/blog-details.html:108
+#: blog/templates/blog.html:39
+msgid "Categories"
+msgstr ""
+
+#: blog/templates/blog-details.html:41 blog/templates/blog-details.html:109
+#: blog/templates/blog.html:41 core/templates/index.html:42
+#: core/templates/index.html:148 shop/templates/shop-grid.html:44
+msgid "All"
+msgstr ""
+
+#: blog/templates/blog-details.html:42
+msgid "Beauty (20)"
+msgstr ""
+
+#: blog/templates/blog-details.html:43
+msgid "Food (5)"
+msgstr ""
+
+#: blog/templates/blog-details.html:44
+msgid "Life Style (9)"
+msgstr ""
+
+#: blog/templates/blog-details.html:45
+msgid "Travel (10)"
+msgstr ""
+
+#: blog/templates/blog-details.html:69 blog/templates/blog.html:68
+msgid "Search By"
+msgstr ""
+
+#: blog/templates/blog-details.html:71 blog/templates/blog.html:70
+msgid "Apple"
+msgstr ""
+
+#: blog/templates/blog-details.html:72 blog/templates/blog.html:71
+msgid "Beauty"
+msgstr ""
+
+#: blog/templates/blog-details.html:73 blog/templates/blog.html:72
+#: core/templates/index.html:44 core/templates/index.html:119
+#: core/templates/index.html:151
+msgid "Vegetables"
+msgstr ""
+
+#: blog/templates/blog-details.html:74 blog/templates/blog.html:73
+msgid "Fruit"
+msgstr ""
+
+#: blog/templates/blog-details.html:75 blog/templates/blog-details.html:109
+#: blog/templates/blog.html:74
+msgid "Healthy Food"
+msgstr ""
+
+#: blog/templates/blog-details.html:76 blog/templates/blog.html:75
+msgid "Lifestyle"
+msgstr ""
+
+#: blog/templates/blog-details.html:109
+msgid "Tags"
+msgstr ""
+
+#: blog/templates/blog-details.html:109
+msgid "Trending"
+msgstr ""
+
+#: blog/templates/blog-details.html:109
+msgid "Cooking"
+msgstr ""
+
+#: blog/templates/blog-details.html:109
+msgid "Life Style"
+msgstr ""
+
+#: blog/templates/blog-details.html:135
+msgid "Post You May Like"
+msgstr ""
+
+#: blog/templates/blog.html:14 blog/templates/blog.html:17
+#: templates/_navbar.html:106
+msgid "Blog"
+msgstr ""
+
+#: blog/templates/blog.html:16 core/templates/contact.html:13
+#: shop/templates/shop-details.html:15 shop/templates/shop-grid.html:17
+#: templates/_navbar.html:96
+msgid "Home"
+msgstr ""
+
+#: blog/templates/blog.html:50
+msgid "Recent News"
+msgstr ""
+
+#: blog/templates/blog.html:97 blog/templates/blog.html:123
+msgid "READ MORE"
+msgstr ""
 
 #: core/forms.py:11
 msgid "Enter your mail"
@@ -42,130 +143,270 @@ msgstr ""
 msgid "Your message"
 msgstr ""
 
-#: core/templates/index.html:38
+#: core/templates/contact.html:11 core/templates/contact.html:14
+msgid "Contact Us"
+msgstr ""
+
+#: core/templates/contact.html:30
+msgid "Phone"
+msgstr ""
+
+#: core/templates/contact.html:37
+msgid "Address"
+msgstr ""
+
+#: core/templates/contact.html:44
+msgid "Open time"
+msgstr ""
+
+#: core/templates/contact.html:83
+msgid "Leave Message"
+msgstr ""
+
+#: core/templates/index.html:39
 msgid "All departments"
 msgstr ""
 
-#: core/templates/index.html:41 core/templates/index.html:142
+#: core/templates/index.html:43 core/templates/index.html:150
 msgid "Fresh Meat"
 msgstr ""
 
-#: core/templates/index.html:42 core/templates/index.html:111
-#: core/templates/index.html:143
-msgid "Vegetables"
-msgstr ""
-
-#: core/templates/index.html:43
+#: core/templates/index.html:45
 msgid "Fruit & Nut Gifts"
 msgstr ""
 
-#: core/templates/index.html:44
+#: core/templates/index.html:46
 msgid "Fresh Berries"
 msgstr ""
 
-#: core/templates/index.html:45
+#: core/templates/index.html:47
 msgid "Ocean Foods"
 msgstr ""
 
-#: core/templates/index.html:46
+#: core/templates/index.html:48
 msgid "Butter & Eggs"
 msgstr ""
 
-#: core/templates/index.html:47 core/templates/index.html:144
+#: core/templates/index.html:49 core/templates/index.html:152
 msgid "Fastfood"
 msgstr ""
 
-#: core/templates/index.html:48
+#: core/templates/index.html:50
 msgid "Fresh Onion"
 msgstr ""
 
-#: core/templates/index.html:49
+#: core/templates/index.html:51
 msgid "Papayaya & Crisps"
 msgstr ""
 
-#: core/templates/index.html:50
+#: core/templates/index.html:52
 msgid "Oatmeal"
 msgstr ""
 
-#: core/templates/index.html:51
+#: core/templates/index.html:53
 msgid "Fresh Bananas"
 msgstr ""
 
-#: core/templates/index.html:60
+#: core/templates/index.html:68
 msgid "All Categories"
 msgstr ""
 
-#: core/templates/index.html:64
+#: core/templates/index.html:72
 msgid "SEARCH"
 msgstr ""
 
-#: core/templates/index.html:75
+#: core/templates/index.html:83
 msgid "support 24/7 time"
 msgstr ""
 
-#: core/templates/index.html:81
+#: core/templates/index.html:89
 msgid "FRUIT FRESH"
 msgstr ""
 
-#: core/templates/index.html:82
+#: core/templates/index.html:90
 msgid "Vegetable"
 msgstr ""
 
-#: core/templates/index.html:82
+#: core/templates/index.html:90
 #, python-format
 msgid "100%% Organic"
 msgstr ""
 
-#: core/templates/index.html:83
+#: core/templates/index.html:91
 msgid "Free Pickup and Delivery Available"
 msgstr ""
 
-#: core/templates/index.html:84
+#: core/templates/index.html:92
 msgid "SHOP NOW"
 msgstr ""
 
-#: core/templates/index.html:106
+#: core/templates/index.html:114
 msgid "Dried Fruit"
 msgstr ""
 
-#: core/templates/index.html:116 core/templates/index.html:121
+#: core/templates/index.html:124 core/templates/index.html:129
 msgid "drink fruits"
 msgstr ""
 
-#: core/templates/index.html:136
+#: core/templates/index.html:144
 msgid "Featured Product"
 msgstr ""
 
-#: core/templates/index.html:140
-msgid "All"
-msgstr ""
-
-#: core/templates/index.html:141
+#: core/templates/index.html:149
 msgid "Oranges"
 msgstr ""
 
-#: core/templates/index.html:201
+#: core/templates/index.html:209 shop/templates/shop-grid.html:162
 msgid "Latest Products"
 msgstr ""
 
-#: core/templates/index.html:239
+#: core/templates/index.html:247
 msgid "Top Rated Products"
 msgstr ""
 
-#: core/templates/index.html:278
+#: core/templates/index.html:286
 msgid "Review Products"
 msgstr ""
 
-#: core/templates/index.html:325
+#: core/templates/index.html:333
 msgid "From The Blog"
 msgstr ""
 
-#: my_site/settings.py:139
+#: my_site/settings.py:141
 msgid "English"
 msgstr ""
 
-#: my_site/settings.py:140
+#: my_site/settings.py:142
 msgid "Azerbaijani"
+msgstr ""
+
+#: shop/templates/shop-details.html:61
+msgid "reviews"
+msgstr ""
+
+#: shop/templates/shop-details.html:78
+msgid "ADD TO CARD"
+msgstr ""
+
+#: shop/templates/shop-details.html:81
+msgid "Availability"
+msgstr ""
+
+#: shop/templates/shop-details.html:81
+msgid "In Stock"
+msgstr ""
+
+#: shop/templates/shop-details.html:82
+msgid "Shipping"
+msgstr ""
+
+#: shop/templates/shop-details.html:82
+msgid "day shipping"
+msgstr ""
+
+#: shop/templates/shop-details.html:82
+msgid "Free pickup today"
+msgstr ""
+
+#: shop/templates/shop-details.html:83
+msgid "Weight"
+msgstr ""
+
+#: shop/templates/shop-details.html:84
+msgid "Share on"
+msgstr ""
+
+#: shop/templates/shop-details.html:100
+msgid "Description"
+msgstr ""
+
+#: shop/templates/shop-details.html:104
+msgid "Information"
+msgstr ""
+
+#: shop/templates/shop-details.html:108
+msgid "Reviews"
+msgstr ""
+
+#: shop/templates/shop-details.html:114 shop/templates/shop-details.html:120
+#: shop/templates/shop-details.html:141
+msgid "Products Infomation"
+msgstr ""
+
+#: shop/templates/shop-details.html:169
+msgid "Related Product"
+msgstr ""
+
+#: shop/templates/shop-grid.html:15
+msgid "Ogani Shop"
+msgstr ""
+
+#: shop/templates/shop-grid.html:18 templates/_navbar.html:97
+msgid "Shop"
+msgstr ""
+
+#: shop/templates/shop-grid.html:42
+msgid "Departments"
+msgstr ""
+
+#: shop/templates/shop-grid.html:54 shop/templates/shop-grid.html:71
+msgid "Price"
+msgstr ""
+
+#: shop/templates/shop-grid.html:87
+msgid "Apply"
+msgstr ""
+
+#: shop/templates/shop-grid.html:94
+msgid "Colors"
+msgstr ""
+
+#: shop/templates/shop-grid.html:97
+msgid "White"
+msgstr ""
+
+#: shop/templates/shop-grid.html:103
+msgid "Gray"
+msgstr ""
+
+#: shop/templates/shop-grid.html:109
+msgid "Red"
+msgstr ""
+
+#: shop/templates/shop-grid.html:115
+msgid "Black"
+msgstr ""
+
+#: shop/templates/shop-grid.html:121
+msgid "Blue"
+msgstr ""
+
+#: shop/templates/shop-grid.html:127
+msgid "Green"
+msgstr ""
+
+#: shop/templates/shop-grid.html:133
+msgid "Popular Size"
+msgstr ""
+
+#: shop/templates/shop-grid.html:136
+msgid "Large"
+msgstr ""
+
+#: shop/templates/shop-grid.html:142
+msgid "Medium"
+msgstr ""
+
+#: shop/templates/shop-grid.html:148
+msgid "Small"
+msgstr ""
+
+#: shop/templates/shop-grid.html:154
+msgid "Tiny"
+msgstr ""
+
+#: shop/templates/shop-grid.html:244
+msgid "Sort By"
 msgstr ""
 
 #: templates/_footer.html:21
@@ -220,19 +461,19 @@ msgstr ""
 msgid "Testimonials"
 msgstr ""
 
-#: templates/_footer.html:43
+#: templates/_footer.html:42
 msgid "Join Our Newsletter Now"
 msgstr ""
 
-#: templates/_footer.html:44
+#: templates/_footer.html:43
 msgid "Get E-mail updates about our latest shop and special offers."
 msgstr ""
 
-#: templates/_footer.html:53
+#: templates/_footer.html:52
 msgid "Subscribe"
 msgstr ""
 
-#: templates/_footer.html:68
+#: templates/_footer.html:108
 msgid "All rights reserved"
 msgstr ""
 
@@ -250,14 +491,6 @@ msgstr ""
 
 #: templates/_navbar.html:77
 msgid "Register"
-msgstr ""
-
-#: templates/_navbar.html:96
-msgid "Home"
-msgstr ""
-
-#: templates/_navbar.html:97
-msgid "Shop"
 msgstr ""
 
 #: templates/_navbar.html:98
@@ -278,10 +511,6 @@ msgstr ""
 
 #: templates/_navbar.html:103
 msgid "Blog Details"
-msgstr ""
-
-#: templates/_navbar.html:106
-msgid "Blog"
 msgstr ""
 
 #: templates/_navbar.html:117

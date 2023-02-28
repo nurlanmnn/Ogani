@@ -47,10 +47,10 @@ from blog.api.urls import urlpatterns as blog_api_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(core_urls)),
-    path('blog', include(blog_urls)),
-    path('shop', include(shop_urls)),
-    path('', include(base_urls)),
+    # path('', include(core_urls)),
+    # path('blog', include(blog_urls)),
+    # path('shop', include(shop_urls)),
+    # path('', include(base_urls)),
     path('rosetta/', include('rosetta.urls')),
     path('', include('social_django.urls', namespace='social')),
     path('/', set_language, name='set_language'),
@@ -62,8 +62,8 @@ urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     path('', include(core_urls)),
     path('', include(base_urls)),
-    path('blog', include(blog_urls)),
-    path('shop', include(shop_urls)),
+    path('blog/', include(blog_urls)),
+    path('shop/', include(shop_urls)),
 )
 
 # urlpatterns += [
