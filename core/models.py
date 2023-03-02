@@ -48,6 +48,18 @@ class AboutUs(AbstractModel):
         verbose_name_plural = ("AboutUs")
 
 
+class DeliveryInfo(AbstractModel):
+    title = models.CharField(max_length=100)
+    text = models.TextField()
+    image = models.ImageField(upload_to='deliveryinfo/%Y/%m/%d/')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = ("DeliveryInfo")
+
+
 class SecureShopping(AbstractModel):
     title = models.CharField(max_length=100)
     text = models.TextField()
@@ -60,13 +72,39 @@ class SecureShopping(AbstractModel):
 
     
 class PrivacyPolicy(AbstractModel):
+    title = models.CharField(max_length=100)
     text = models.TextField()
+    image = models.ImageField(upload_to='privacypolicy/%Y/%m/%d/')
 
     def __str__(self):
-        return self.text
+        return self.title
         
     class Meta:
-        verbose_name_plural = ("PrivacyPolicy")
+        verbose_name_plural = ("Privacy Policy")
+
+
+class FAQ(AbstractModel):
+    title = models.CharField(max_length=100)
+    text = models.TextField()
+    image = models.ImageField(upload_to='faq/%Y/%m/%d/')
+
+    def __str__(self):
+        return self.title
+        
+    class Meta:
+        verbose_name_plural = ("FAQ")
+
+
+class OurServices(AbstractModel):
+    title = models.CharField(max_length=100)
+    text = models.TextField()
+    image = models.ImageField(upload_to='ourservices/%Y/%m/%d/')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = ("Our Services")
 
 
 class Contact(AbstractModel):

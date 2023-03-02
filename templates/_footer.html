@@ -21,19 +21,18 @@
                     <h6>{% trans 'About Ogani' %}</h6>
                     <ul>
                         <li><a href="{% url 'aboutus' %}">{% trans 'About Us' %}</a></li>
-                        <!-- <li><a href="#">{% trans 'About Our Shop' %}</a></li> -->
                         <li><a href="{% url 'secureshopping' %}">{% trans 'Secure Shopping' %}</a></li>
-                        <li><a href="#">{% trans 'Delivery infomation' %}</a></li>
-                        <li><a href="#">{% trans 'Privacy Policy' %}</a></li>
-                        <li><a href="#">{% trans 'Our Sitemap' %}</a></li>
+                        <li><a href="{% url 'deliveryinfo' %}">{% trans 'Delivery infomation' %}</a></li>
+                        <li><a href="{% url 'privacypolicy' %}">{% trans 'Privacy Policy' %}</a></li>
+                        <!-- <li><a href="#">{% trans 'Our Sitemap' %}</a></li> -->
                     </ul>
                     <ul>
                         <!-- <li><a href="#">{% trans 'Who We Are' %}</a></li> -->
-                        <li><a href="#">{% trans 'Our Services' %}</a></li>
-                        <li><a href="#">{% trans 'Projects' %}</a></li>
+                        <li><a href="{% url 'ourservices' %}">{% trans 'Our Services' %}</a></li>
                         <li><a href="{% url 'contact' %}">{% trans 'Contact' %}</a></li>
-                        <li><a href="#">{% trans 'Innovation' %}</a></li>
-                        <li><a href="#">{% trans 'Testimonials' %}</a></li>
+                        <li><a href="{% url 'faq' %}">FAQ</a></li>
+                        <!-- <li><a href="#">{% trans 'Projects' %}</a></li> -->
+                        <!-- <li><a href="#">{% trans 'Testimonials' %}</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -56,7 +55,7 @@
                     <!-- Bu isə API ilə yazılışıdır -->
                     <form method="post">
                         {% csrf_token %}
-                        <input type="email" id="emailinput" placeholder="Enter your mail">
+                        <input type="email" id="emailinput" placeholder="{% trans 'Enter your mail' %}">
                         <button type="submit" id="emailbutton" class="site-btn">Subscribe</button>
                     </form> 
 

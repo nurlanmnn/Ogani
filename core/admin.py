@@ -1,9 +1,9 @@
 from django.contrib import admin
 
 from .models import (
-    Advertisement, FeaturedProduct, Subscriber, Setting, AboutUs, 
+    FAQ, Advertisement, FeaturedProduct, OurServices, Subscriber, Setting, AboutUs, 
     SecureShopping, PrivacyPolicy, 
-    Contact, Image
+    Contact, Image, DeliveryInfo
     )
 
 # Register your models here.
@@ -13,6 +13,9 @@ admin.site.register(PrivacyPolicy)
 admin.site.register(Image)
 admin.site.register(Advertisement)
 admin.site.register(FeaturedProduct)
+admin.site.register(DeliveryInfo)
+admin.site.register(OurServices)
+admin.site.register(FAQ)
 
 
 

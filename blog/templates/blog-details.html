@@ -12,9 +12,9 @@
                     <div class="blog__details__hero__text">
                         <h2>{{ post.title }}</h2>
                         <ul>
-                            <li>By {{ post.author }}</li>
+                            <li>By {{ post.author.first_name }} {{ post.author.last_name }}</li>
                             <li>{{ post.created_at|date:"j F Y" }}</li>
-                            <li>8 {% trans 'Comments' %}</li>
+                            <!-- <li>8 {% trans 'Comments' %}</li> -->
                         </ul>
                     </div>
                 </div>
@@ -37,12 +37,14 @@
                         </div> -->
                         <div class="blog__sidebar__item">
                             <h4>{% trans 'Categories' %}</h4>
+                            
                             <ul>
-                                <li><a href="#">{% trans 'All' %}</a></li>
-                                <li><a href="#">{% trans 'Beauty (20)' %}</a></li>
-                                <li><a href="#">{% trans 'Food (5)' %}</a></li>
-                                <li><a href="#">{% trans 'Life Style (9)' %}</a></li>
-                                <li><a href="#">{% trans 'Travel (10)' %}</a></li>
+                                <a href="{% url 'all_categorie' %}">{% trans 'All' %}</a>
+                                {% for i in category %}
+                                <li><a href="{{ i.get_absolute_url }}">{{ i.name }}</a></li>
+                                {% empty %}
+                                <p></p>
+                                {% endfor %}
                             </ul>
                         </div>
                         {% comment %}
@@ -64,7 +66,7 @@
                             </div>
                         </div>
                         {% endcomment %}
-                        <div class="blog__sidebar__item">
+                        <!-- <div class="blog__sidebar__item">
                             <h4>{% trans 'Search By' %}</h4>
                             <div class="blog__sidebar__item__tags">
                                 <a href="#">{% trans 'Apple' %}</a>
@@ -74,7 +76,7 @@
                                 <a href="#">{% trans 'Healthy Food' %}</a>
                                 <a href="#">{% trans 'Lifestyle' %}</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-7 order-md-1 order-1">
@@ -93,10 +95,10 @@
                             <div class="col-lg-6">
                                 <div class="blog__details__author">
                                     <div class="blog__details__author__pic">
-                                        <img src="{{ post.author_image.url }}" alt="">
+                                        <img src="{{ post.author_image.url }}" alt="author_image">
                                     </div>
                                     <div class="blog__details__author__text">
-                                        <h6>{{ post.author }}</h6>
+                                        <h6>{{ post.author.first_name }} {{ post.author.last_name}}</h6>
                                         <!-- <span>Admin</span> -->
                                     </div>
                                 </div>
@@ -105,7 +107,7 @@
                                 <div class="blog__details__widget">
                                     <ul>
                                         <li><span>{% trans 'Categories' %}:</span> {{ post.category }}</li>
-                                        <li><span>{% trans 'Tags' %}:</span> {% trans 'All' %}, {% trans 'Trending' %}, {% trans 'Cooking' %}, {% trans 'Healthy Food' %}, {% trans 'Life Style' %}</li>
+                                        <!-- <li><span>{% trans 'Tags' %}:</span> {% trans 'All' %}, {% trans 'Trending' %}, {% trans 'Cooking' %}, {% trans 'Healthy Food' %}, {% trans 'Life Style' %}</li> -->
                                     </ul>
                                     <div class="blog__details__social">
                                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -146,7 +148,7 @@
                         <div class="blog__item__text">
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> {{ i.created_at|date:"j F Y" }}</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                <!-- <li><i class="fa fa-comment-o"></i> 5</li> -->
                             </ul>
                             <h5><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h5>
                             <p>{{ i.description|truncatechars:90 }}</p>

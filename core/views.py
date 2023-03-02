@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect
 from core.forms import SubscriberForm, ContactForm
-from .models import AboutUs, SecureShopping, Setting, Contact
+from .models import FAQ, AboutUs, DeliveryInfo, PrivacyPolicy, SecureShopping, Setting, Contact, OurServices
 from django.utils import translation
 # from django.config import settings
 from urllib.parse import urlparse
@@ -61,6 +61,34 @@ def secureshopping(request):
         'secureshopping': secureshopping
     }
     return render(request, 'secureshopping.html', context)
+
+def ourservices(request):
+    ourservices = OurServices.objects.first()
+    context = {
+        'ourservices': ourservices
+    }
+    return render(request, 'ourservices.html', context)
+
+def privacypolicy(request):
+    privacypolicy = PrivacyPolicy.objects.first()
+    context = {
+        'privacypolicy': privacypolicy
+    }
+    return render(request, 'privacypolicy.html', context)
+
+def faq(request):
+    faq = FAQ.objects.first()
+    context = {
+        'faq': faq
+    }
+    return render(request, 'faq.html', context)
+
+def deliveryinfo(request):
+    deliveryinfo = DeliveryInfo.objects.first()
+    context = {
+        'deliveryinfo': deliveryinfo
+    }
+    return render(request, 'deliveryinfo.html', context)
 
 from django.utils import translation
 from django.shortcuts import redirect

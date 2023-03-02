@@ -34,6 +34,13 @@ class BlogListView(ListView):
     context_object_name = 'blog'
     paginate_by = 4
     
+    # def get_template_names(self):
+    #     slug = Blog.objects.get(slug)
+    #     if 'smartphones-2023-02-28' in self.request.GET:
+    #         return ['blog-details.html']
+    #     else:
+    #         return ['blog.html']
+
     def get_queryset(self):
         queryset = super().get_queryset()
         blog_name = self.request.GET.get('blog_name')

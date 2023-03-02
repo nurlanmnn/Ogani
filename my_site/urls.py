@@ -71,3 +71,5 @@ urlpatterns += i18n_patterns(
 #    # YENİ
 #     path("set_language/<str:language>", set_language, name="set-language"),
 # ]
+
+admin.site.site_header = 'OGANI'
