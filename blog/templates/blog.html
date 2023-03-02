@@ -46,7 +46,7 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        <div class="blog__sidebar__item">
+                        <!-- <div class="blog__sidebar__item">
                             <h4>{% trans 'Recent News' %}</h4>
                             <div class="blog__sidebar__recent">
                                 {% get_News_all 0 3 as news %}
@@ -74,7 +74,7 @@
                                 <a href="#">{% trans 'Healthy Food' %}</a>
                                 <a href="#">{% trans 'Lifestyle' %}</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-7" > <!-- id="blog" --> 
@@ -85,11 +85,16 @@
                             <div class="blog__item">
                                 <div class="blog__item__pic">
                                     <img src="{{ i.image.url }}" width="220" height="280" alt="">
+                                    <!-- <ul class="product__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul> -->
                                 </div>
                                 <div class="blog__item__text">
                                     <ul>
                                         <li><i class="fa fa-calendar-o"></i> {{ i.created_at|date:"j F Y" }} </li>
-                                        <li><i class="fas fa-comment"></i> 5</li>
+                                        <!-- <li><i class="fas fa-comment"></i> 5</li> -->
                                     </ul>
                                     <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
                                     <h5><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h5>

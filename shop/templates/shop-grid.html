@@ -90,7 +90,7 @@
                         </div>
                         
                         
-                        <div class="sidebar__item sidebar__item__color--option">
+                        <!-- <div class="sidebar__item sidebar__item__color--option">
                             <h4>{% trans 'Colors' %}</h4>
                             <div class="sidebar__item__color sidebar__item__color--white">
                                 <label for="white">
@@ -128,7 +128,7 @@
                                     <input type="radio" id="green">
                                 </label>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- <div class="sidebar__item">
                             <h4>{% trans 'Popular Size' %}</h4>
                             <div class="sidebar__item__size">
@@ -156,6 +156,7 @@
                                 </label>
                             </div>
                         </div> -->
+                        
                         <!-- Latest product starts -->
                         <div class="sidebar__item">
                             <div class="latest-product__text">
@@ -170,7 +171,11 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>{{ i.title }}</h6>
-                                                <span>{{ i.price }}</span>
+                                                {% if i.discounted_price == i.price %}
+                                                <span>$ {{ i.price }}</span>
+                                                {% else %}
+                                                <span>$ {{ i.discounted_price }}</span><s>$ {{ i.price}}</s>
+                                                {% endif %}
                                             </div>
                                         </a>
                                         {% endfor %}
@@ -186,7 +191,11 @@
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>{{ i.title }}</h6>
-                                                <span>{{ i.price }}</span>
+                                                {% if i.discounted_price == i.price %}
+                                                <span>$ {{ i.price }}</span>
+                                                {% else %}
+                                                <span>$ {{ i.discounted_price }}</span><s>$ {{ i.price}}</s>
+                                                {% endif %}
                                             </div>
                                         </a>
                                         {% endfor %}
@@ -269,7 +278,6 @@
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <!-- <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>

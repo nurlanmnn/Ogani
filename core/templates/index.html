@@ -213,7 +213,11 @@
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
-                                        <span>{{ i.price }}</span>
+                                        {% if i.discounted_price == i.price %}
+                                        <span>$ {{ i.price }}</span>
+                                        {% else %}
+                                        <span>$ {{ i.discounted_price }}</span><s>$ {{ i.price}}</s>
+                                        {% endif %}
                                     </div>
                                 </a>
                                 {% endfor %}
@@ -229,7 +233,11 @@
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
-                                        <span>{{ i.price }}</span>
+                                        {% if i.discounted_price == i.price %}
+                                        <span>$ {{ i.price }}</span>
+                                        {% else %}
+                                        <span>$ {{ i.discounted_price }}</span><s>$ {{ i.price}}</s>
+                                        {% endif %}
                                     </div>
                                 </a>
                                 {% endfor %}
@@ -251,7 +259,11 @@
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
-                                        <span>{{ i.price }}</span>
+                                        {% if i.discounted_price == i.price %}
+                                        <span>$ {{ i.price }}</span>
+                                        {% else %}
+                                        <span>$ {{ i.discounted_price }}</span><s>$ {{ i.price}}</s>
+                                        {% endif %}
                                     </div>
                                 </a>
                                 {% endfor %}
@@ -267,7 +279,11 @@
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
-                                        <span>{{ i.price }}</span>
+                                        {% if i.discounted_price == i.price %}
+                                        <span>$ {{ i.price }}</span>
+                                        {% else %}
+                                        <span>$ {{ i.discounted_price }}</span><s>$ {{ i.price}}</s>
+                                        {% endif %}
                                     </div>
                                 </a>
                                 {% endfor %}
@@ -290,7 +306,11 @@
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
-                                        <span>{{ i.price }}</span>
+                                        {% if i.discounted_price == i.price %}
+                                        <span>$ {{ i.price }}</span>
+                                        {% else %}
+                                        <span>$ {{ i.discounted_price }}</span><s>$ {{ i.price}}</s>
+                                        {% endif %}
                                     </div>
                                 </a>
                                 {% endfor %}
@@ -306,7 +326,11 @@
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>{{ i.title }}</h6>
-                                        <span>{{ i.price }}</span>
+                                        {% if i.discounted_price == i.price %}
+                                        <span>$ {{ i.price }}</span>
+                                        {% else %}
+                                        <span>$ {{ i.discounted_price }}</span><s>$ {{ i.price}}</s>
+                                        {% endif %}
                                     </div>
                                 </a>
                                 {% endfor %}
@@ -341,7 +365,7 @@
                         <div class="blog__item__text">
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> {{ i.created_at|date:"j F Y" }}</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                <!-- <li><i class="fa fa-comment-o"></i> 5</li> -->
                             </ul>
                             <h5><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h5>
                             <p>{{ i.description|truncatechars:90 }}</p>
