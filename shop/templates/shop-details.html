@@ -79,8 +79,8 @@
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
                             <li><b>{% trans 'Availability' %}</b> <span>{% trans 'In Stock' %}</span></li>
-                            <li><b>{% trans 'Shipping' %}</b> <span>01 {% trans 'day shipping' %}. <samp>{% trans 'Free pickup today' %}</samp></span></li>
-                            <li><b>{% trans 'Weight' %}</b> <span>0.5 kg</span></li>
+                            <li><b>{% trans 'Shipping' %}</b> <span>1 {% trans 'day shipping' %}. <samp>{% trans 'Free pickup today' %}</samp></span></li>
+                            <li><b>{% trans 'Weight' %}</b> <span>1 kg</span></li>
                             <li><b>{% trans 'Share on' %}</b>
                                 <div class="share">
                                     <a href="{{ settings.facebook }}"><i class="fab fa-facebook"></i></a>
@@ -99,14 +99,14 @@
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
                                     aria-selected="true">{% trans 'Description' %}</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
                                     aria-selected="false">{% trans 'Information' %}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
                                     aria-selected="false">{% trans 'Reviews' %} <span>(1)</span></a>
-                            </li>
+                            </li> -->
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
@@ -115,7 +115,7 @@
                                     <p>{{ product.description }}</p>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            <!-- <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__tab__desc">
                                     <h6>{% trans 'Products Infomation' %}</h6>
                                     <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
@@ -151,7 +151,7 @@
                                         Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
                                         Proin eget tortor risus.</p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

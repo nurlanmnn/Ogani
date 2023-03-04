@@ -5,3 +5,4 @@ from .models import Blog, News, BlogCategory
 admin.site.register(Blog)
 admin.site.register(News)
 admin.site.register(BlogCategory)
+

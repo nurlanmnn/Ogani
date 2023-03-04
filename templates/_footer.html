@@ -77,6 +77,10 @@
                 .then(data => {
                     subscribeModalLongTitle = document.getElementById('subscribeModalLongTitle');
                     emailinput.value = '';
+                    alert('Successfully subscribed!');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
                 });
         }
     }

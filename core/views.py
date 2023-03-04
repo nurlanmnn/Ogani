@@ -4,6 +4,7 @@ from .models import FAQ, AboutUs, DeliveryInfo, PrivacyPolicy, SecureShopping, S
 from django.utils import translation
 # from django.config import settings
 from urllib.parse import urlparse
+from django.contrib import messages
 
 # Create your views here.
 
@@ -15,6 +16,7 @@ def contact(request):
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
+            messages.success(request, 'Successfully sent!')
             contact_form = ContactForm()
     context = {
         'contact': contact,

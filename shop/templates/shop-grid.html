@@ -72,7 +72,7 @@
                             <div class="price-range-wrap">
                                 <form method="get" action="">
                                     <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                        data-min="6" data-max="100">
+                                        data-min="6" data-max="40">
                                         <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                         <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                         <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
@@ -233,15 +233,18 @@
                                         <div class="product__discount__item__text">
                                             <span><a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a></span>
                                             <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
+                                            {% if i.discounted_price == i.price %}
+                                            <h5>$ {{ i.price }}</h5>
+                                            {% else %}
                                             <div class="product__item__price">$ {{ i.discounted_price }}<span>${{ i.price }}</span></div>
+                                            {% endif %}
                                         </div>
                                     </div>
-                                </div>
                                 {% endfor %}
                             </div>
                         </div>
                     </div>
-                {% endcomment %}
+                    {% endcomment %}
                     <!-- Sale off ends -->
 
                     <!-- Products section starts -->
@@ -272,7 +275,7 @@
                     <div class="row">
                         {% for i in product %}
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
+                            <div class="product__item ">
                                 <div class="product__item__pic set-bg" data-setbg="{{ i.image.url }}">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -308,7 +311,7 @@
                             {% if is_paginated %}
                             {% if page_obj.has_previous %}
                             <a href="?page={{ page_obj.previous_page_number }}" class=" product__pagination__item">
-                                <i class="fa fa-long-arrow-left"></i>
+                                <i class="fas fa-arrow-left"></i>
                             </a>
                             {% endif %}
                             {% for page in page_obj.paginator.page_range %}
@@ -320,7 +323,7 @@
                             {% endfor %}
                             {% if page_obj.has_next %}
                             <a href="?page={{ page_obj.next_page_number }}" class=" product__pagination__item">
-                                <i class="fa fa-long-arrow-right"></i>
+                                <i class="fas fa-arrow-right"></i>
                             </a>
                             {% endif %}
                             {% endif %}

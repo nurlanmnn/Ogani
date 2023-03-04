@@ -150,11 +150,10 @@
                     </div>
                 </div>
             </div>
-            
-                {% get_Product_all 3 6 as fproduct %}
-                {% for i in fproduct %}
             <div class="row featured__filter">
-                <div class="col-lg-6 col-sm-12 mix oranges fresh-meat">
+                {% get_Product_all 0 8 as fprod %}
+                {% for i in fprod %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ i.image.url }}">
                             <ul class="featured__item__pic__hover">
@@ -163,14 +162,19 @@
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
-                        <div class="featured__item__text">
-                            <h6><a href="{{ i.get_absolute_url }}">{{ i.title }}</a></h6>
-                            <h5>{{ i.price }}</h5>
+                        <div class="product__discount__item__text">
+                            <h5><a href="{{ i.get_absolute_url }}">{{i.title }}</a></h5>
+                            {% if i.discounted_price == i.price %}
+                            <h5 class="product__item__price">$ {{ i.price }}</h5>
+                            {% else %}
+                            <div class="product__item__price">$ {{ i.discounted_price }}<span>${{ i.price }}</span></div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
-            </div>
                 {% endfor %}
+            </div>
+
         </div>
     </section>
     
