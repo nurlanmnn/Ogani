@@ -2,6 +2,7 @@ from django.db import models
 from decimal import Decimal
 from django.urls import reverse
 from django.contrib.auth import get_user_model
+from baseuser.models import MyUser
 
 User = get_user_model()
 
@@ -55,7 +56,6 @@ class Product(AbstractModel):
         return reverse('shopdetails', kwargs={'slug': self.slug})
 
 
-
-
-
-
+# class Wishlist(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     products = models.ManyToManyField(Product)

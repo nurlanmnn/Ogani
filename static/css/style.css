@@ -537,6 +537,10 @@ ol {
 	right: -12px;
 }
 
+.sale-off-section--hidden {
+	display: none;
+}
+
 .header__cart .header__cart__price {
 	font-size: 14px;
 	color: #6f6f6f;

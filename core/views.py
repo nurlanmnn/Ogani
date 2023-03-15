@@ -1,9 +1,11 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect
+from django.http import HttpResponse
 from core.forms import SubscriberForm, ContactForm
 from .models import FAQ, AboutUs, DeliveryInfo, PrivacyPolicy, SecureShopping, Setting, Contact, OurServices
 from django.utils import translation
 # from django.config import settings
 from urllib.parse import urlparse
+from django.contrib import messages
 
 # Create your views here.
 
@@ -15,6 +17,7 @@ def contact(request):
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
+            messages.success(request, 'Successfully sent!')
             contact_form = ContactForm()
     context = {
         'contact': contact,
@@ -89,6 +92,7 @@ def deliveryinfo(request):
         'deliveryinfo': deliveryinfo
     }
     return render(request, 'deliveryinfo.html', context)
+
 
 from django.utils import translation
 from django.shortcuts import redirect
