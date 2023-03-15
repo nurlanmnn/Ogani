@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect
+from django.http import HttpResponse
 from core.forms import SubscriberForm, ContactForm
 from .models import FAQ, AboutUs, DeliveryInfo, PrivacyPolicy, SecureShopping, Setting, Contact, OurServices
 from django.utils import translation
@@ -91,6 +92,7 @@ def deliveryinfo(request):
         'deliveryinfo': deliveryinfo
     }
     return render(request, 'deliveryinfo.html', context)
+
 
 from django.utils import translation
 from django.shortcuts import redirect
