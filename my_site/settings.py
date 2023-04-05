@@ -26,10 +26,8 @@ SECRET_KEY = 'django-insecure-2pm^k6@ly)b0zv%ca+h9nw@uwyuc#%9i*js$tbd!tsd_(+%^6e
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# DEBUG = False
 
 ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['http://127.0.0.1:8000/']
 
 
 
@@ -84,6 +82,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'core.context_processor.context_processors.header',
                 'core.context_processor.context_processors.subscribe_form',
+                'core.context_processor.context_processors.cart_context',
             ],
         },
     },
@@ -219,3 +218,14 @@ EMAIL_HOST_USER = 'memmedlinurlan2020@gmail.com'
 EMAIL_HOST_PASSWORD = 'wsxmoebbwqwogvtj'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+LOGIN_URL = '/login'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+PASSWORD_RESET_TEMPLATE = 'registration/password_reset_form.html'
+PASSWORD_RESET_DONE_TEMPLATE = 'registrations/password_reset_done.html'
+PASSWORD_RESET_CONFIRM_TEMPLATE = 'registration/password_reset_confirm.html'
+PASSWORD_RESET_COMPLETE_TEMPLATE = 'registration/password_reset_complete.html'
+
+
+

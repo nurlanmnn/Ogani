@@ -55,7 +55,25 @@ class Product(AbstractModel):
     def get_absolute_url(self):
         return reverse('shopdetails', kwargs={'slug': self.slug})
 
+class Cart(AbstractModel):
+    cart_id = models.CharField(max_length=250, blank=True)
 
-# class Wishlist(models.Model):
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     products = models.ManyToManyField(Product)
+    def __str__(self):
+        return self.cart_id
+
+
+class CartItem(AbstractModel):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+    is_active = models.BooleanField(default=True)
+
+    def sub_total(self):
+        if self.product.discounted_price == self.product.price:
+            return self.product.price * self.quantity
+        else:
+            return self.product.discounted_price * self.quantity
+
+    def __str__(self):
+        return self.product.title
+    
