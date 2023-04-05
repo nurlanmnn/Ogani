@@ -1,4 +1,4 @@
-# Ogani
+
 # Ogani Ecommerce Project
 
 # Installation
