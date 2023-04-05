@@ -47,6 +47,8 @@ from blog.api.urls import urlpatterns as blog_api_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # path('accounts/', include('django.contrib.auth.urls')),
     # path('', include(core_urls)),
     # path('blog', include(blog_urls)),
     # path('shop', include(shop_urls)),
@@ -60,6 +62,7 @@ urlpatterns = [
 # translation
 urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
+    # path("password_reset", password_reset_request, name="password_reset"),
     path('', include(core_urls)),
     path('', include(base_urls)),
     path('blog/', include(blog_urls)),
